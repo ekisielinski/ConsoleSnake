@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F21E1DB0-F92C-447F-9636-E1E4018DD032}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SnakeGame</RootNamespace>
+    <AssemblyName>SnakeGame</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Code\GameModule\Sleeper\ISleeper.cs" />
+    <Compile Include="Code\GameModule\Sleeper\Sleeper.cs" />
+    <Compile Include="Code\Drawing\Terrain\AppleLookProvider.cs" />
+    <Compile Include="Code\Drawing\BigDigits\BigDigitsValueRenderer.cs" />
+    <Compile Include="Code\ModuleGraph\IGraphNode.cs" />
+    <Compile Include="Code\ModuleGraph\GraphNode.cs" />
+    <Compile Include="Code\ModuleGraph\Graph.cs" />
+    <Compile Include="Code\PureDiBoostrapper.cs" />
+    <Compile Include="Code\Modules\GameOver\GameOverInfo.cs" />
+    <Compile Include="Code\Modules\MainMenu\MainMenuEntry.cs" />
+    <Compile Include="Code\Modules\MainMenu\OptionsListWindow.cs" />
+    <Compile Include="Code\Drawing\Terrain\ITerrainEntityLookProvider.cs" />
+    <Compile Include="Code\Drawing\Terrain\SnakeBodyPartLookProvider.cs" />
+    <Compile Include="Code\HiScores\IHiScoresUpdater.cs" />
+    <Compile Include="Code\Modules\EnterName\UserInputString.cs" />
+    <Compile Include="Code\Triggers\Concrete\ManualSetTrigger.cs" />
+    <Compile Include="Code\Triggers\Trigger.cs" />
+    <Compile Include="Code\GameModule\GameModuleContext.cs" />
+    <Compile Include="Code\GameModule\GameModuleActivator.cs" />
+    <Compile Include="Code\GameModule\IGameModuleContext.cs" />
+    <Compile Include="Code\GameModule\GameModuleNavigator.cs" />
+    <Compile Include="Code\FancyEffects\GameAnimations.cs" />
+    <Compile Include="Code\FancyEffects\Animations\Animation.cs" />
+    <Compile Include="Code\FancyEffects\Animations\AnimationFrames.cs" />
+    <Compile Include="Code\Drawing\Terrain\TerrainRenderer.cs" />
+    <Compile Include="Code\Drawing\Windows\Window.cs" />
+    <Compile Include="Code\Drawing\Windows\WindowAppearance.cs" />
+    <Compile Include="Code\FancyEffects\Animations\FramesArrangement.cs" />
+    <Compile Include="Code\Modules\Credits\CreditsGameModule.cs" />
+    <Compile Include="Code\Modules\EnterName\EnterNameGameModule.cs" />
+    <Compile Include="Code\Modules\GameOver\GameOverGameModule.cs" />
+    <Compile Include="Code\Modules\Gameplay\GameplayGameModule.cs" />
+    <Compile Include="Code\Modules\Gameplay\SnakeKeyHandler.cs" />
+    <Compile Include="Code\Drawing\BigDigits\BigDigits.cs" />
+    <Compile Include="Code\FancyEffects\ScreenTransitions\Concrete\NullTransition.cs" />
+    <Compile Include="Code\FancyEffects\ScreenTransitions\Concrete\TransitionT2.cs" />
+    <Compile Include="Code\FancyEffects\ScreenTransitions\Concrete\TransitionT1.cs" />
+    <Compile Include="Code\FancyEffects\ScreenTransitions\ScreenTransition.cs" />
+    <Compile Include="Code\FancyEffects\ScreenTransitions\ScreenTransitionActivator.cs" />
+    <Compile Include="Code\FancyEffects\UI\BigDigitsScoreUI.cs" />
+    <Compile Include="Code\FancyEffects\UI\ScoreTransitionUI.cs" />
+    <Compile Include="Code\Modules\Gameplay\StatsWindow.cs" />
+    <Compile Include="Code\Modules\HiScores\HiScoresGameModule.cs" />
+    <Compile Include="Code\Modules\HowToPlay\HowToPlayGameModule.cs" />
+    <Compile Include="Code\Modules\MainMenu\MainMenuGameModule.cs" />
+    <Compile Include="Code\Modules\ExitApp\ExitAppGameModule.cs" />
+    <Compile Include="Code\GameModule\GameModule.cs" />
+    <Compile Include="Code\GameModule\GameModuleLoop.cs" />
+    <Compile Include="Code\Modules\MainMenu\OptionList\Option.cs" />
+    <Compile Include="Code\Modules\MainMenu\OptionList\OptionSelector.cs" />
+    <Compile Include="Code\Modules\MainMenu\OptionList\OptionsList.cs" />
+    <Compile Include="Code\HiScores\Container\HiScoresEntry.cs" />
+    <Compile Include="Code\HiScores\Container\HiScores.cs" />
+    <Compile Include="Code\HiScores\IHiScoresReader.cs" />
+    <Compile Include="Code\HiScores\Storage\IHiScoresStorage.cs" />
+    <Compile Include="Code\Modules\HiScores\HiScoresWindow.cs" />
+    <Compile Include="Code\HiScores\Container\IHiScores.cs" />
+    <Compile Include="Code\HiScores\Storage\HiScoresInMemoryStorage.cs" />
+    <Compile Include="Code\GameRoot.cs" />
+    <Compile Include="Code\HiScores\HiScoresManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SnakeCommon\SnakeCommon.csproj">
+      <Project>{5a7ada5f-eb40-4c3e-953c-6215cb0f6bd3}</Project>
+      <Name>SnakeCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SnakeCore\SnakeCore.csproj">
+      <Project>{d7aabd81-3712-4449-b03b-f8bfd6f96bac}</Project>
+      <Name>SnakeCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SnakeHardware\SnakeHardware.csproj">
+      <Project>{0395c958-3779-4260-b046-b7ec2e7f1d3e}</Project>
+      <Name>SnakeHardware</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SnakeText\SnakeText.csproj">
+      <Project>{C060DD99-DA0B-4075-AF60-7D7C74450371}</Project>
+      <Name>SnakeText</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\Digits.txt" />
+    <Content Include="Data\Credits.txt" />
+    <Content Include="Data\HiScores.txt" />
+    <Content Include="Data\Logo.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

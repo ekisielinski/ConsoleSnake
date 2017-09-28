@@ -1,0 +1,5 @@
+﻿XXX| X |XXX|XXX|X  |XXX|XX |XXX|XXX|XXX|
+X X|XX |  X|  X|X X|X  |X  |X X|X X|X X|
+X X| X |XXX| XX|XXX|XXX|XXX|  X|XXX|XXX|
+X X| X |X  |  X|  X|  X|X X|  X|X X|  X|
+XXX|XXX|XXX|XXX|  X|XXX|XXX|  X|XXX| XX|

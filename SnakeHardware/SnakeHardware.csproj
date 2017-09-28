@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0395C958-3779-4260-B046-B7EC2E7F1D3E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SnakeHardware</RootNamespace>
+    <AssemblyName>SnakeHardware</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Code\Audio\DisableableAudioDevice.cs" />
+    <Compile Include="Code\Audio\IAudioDevice.cs" />
+    <Compile Include="Code\Audio\NullAudioDevice.cs" />
+    <Compile Include="Code\Audio\SafeAudioDevice.cs" />
+    <Compile Include="Code\Display\FPSCounter\FPSCounter.cs" />
+    <Compile Include="Code\Display\FPSCounter\IFPSCounter.cs" />
+    <Compile Include="Code\Display\NullDisplayDevice.cs" />
+    <Compile Include="Code\Display\DisplayDevice.cs" />
+    <Compile Include="Code\Display\IDisplayDevice.cs" />
+    <Compile Include="Code\Display\ScreenBuffer.cs" />
+    <Compile Include="Code\HardwareAccessLayer.cs" />
+    <Compile Include="Code\Input\IInputDevice.cs" />
+    <Compile Include="Code\Input\KeyData.cs" />
+    <Compile Include="Code\Input\KeyType.cs" />
+    <Compile Include="Code\Input\NullInputDevice.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\SnakeCommon\SnakeCommon.csproj">
+      <Project>{5a7ada5f-eb40-4c3e-953c-6215cb0f6bd3}</Project>
+      <Name>SnakeCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SnakeText\SnakeText.csproj">
+      <Project>{c060dd99-da0b-4075-af60-7d7c74450371}</Project>
+      <Name>SnakeText</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

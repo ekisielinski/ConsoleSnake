@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D7AABD81-3712-4449-B03B-F8BFD6F96BAC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SnakeCore</RootNamespace>
+    <AssemblyName>SnakeCore</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Code\Apples\IAppleConsumerStatus.cs" />
+    <Compile Include="Code\Terrain\TerrainUpdater.cs" />
+    <Compile Include="Code\Terrain\ITerrainEntityReader.cs" />
+    <Compile Include="Code\Common\GameObject.cs" />
+    <Compile Include="Code\Common\GameObjectsUpdater.cs" />
+    <Compile Include="Code\Common\Status\StatusItem.cs" />
+    <Compile Include="Code\Apples\AppleConsumer.cs" />
+    <Compile Include="Code\Common\Status\IStatus.cs" />
+    <Compile Include="Code\Common\IUpdateable.cs" />
+    <Compile Include="Code\GameLogic.cs" />
+    <Compile Include="Code\Apples\AppleGenerator.cs" />
+    <Compile Include="Code\Terrain\TerrainEntity.cs" />
+    <Compile Include="Code\Apples\AppleEntity.cs" />
+    <Compile Include="Code\GameOver\GameOverConditions.cs" />
+    <Compile Include="Code\GameOver\IGameOverJustification.cs" />
+    <Compile Include="Code\Score\IScoreStatus.cs" />
+    <Compile Include="Code\Snake\Movement\Queue\ISnakeMoveQueue.cs" />
+    <Compile Include="Code\Snake\Movement\SnakePositionUpdater.cs" />
+    <Compile Include="Code\Snake\Body\ISnakeBody.cs" />
+    <Compile Include="Code\Snake\Body\SnakeBodyPartEntity.cs" />
+    <Compile Include="Code\Terrain\Terrain.cs" />
+    <Compile Include="Code\Score\Score.cs" />
+    <Compile Include="Code\Snake\Body\SnakeBody.cs" />
+    <Compile Include="Code\Snake\Movement\ISnakeMovementController.cs" />
+    <Compile Include="Code\Snake\Movement\Moves\SnakeDelayedMove.cs" />
+    <Compile Include="Code\Snake\Movement\Queue\SnakeMoveQueue.cs" />
+    <Compile Include="Code\Snake\Movement\Moves\SnakeFreeMove.cs" />
+    <Compile Include="Code\Snake\Movement\Moves\SnakeValidMove.cs" />
+    <Compile Include="Code\Snake\Movement\SnakeSpeed.cs" />
+    <Compile Include="Code\Time\Helpers\GameTimeDelay.cs" />
+    <Compile Include="Code\Time\Source\GameTimeSource.cs" />
+    <Compile Include="Code\Time\GameTime.cs" />
+    <Compile Include="Code\Time\Helpers\GameTimeUtils.cs" />
+    <Compile Include="Code\Time\Source\IGameTimeSource.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SnakeCommon\SnakeCommon.csproj">
+      <Project>{5a7ada5f-eb40-4c3e-953c-6215cb0f6bd3}</Project>
+      <Name>SnakeCommon</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

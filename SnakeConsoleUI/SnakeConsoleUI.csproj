@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A59A746C-AD32-434B-8745-48BB6FF97997}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SnakeConsoleUI</RootNamespace>
+    <AssemblyName>SnakeConsoleUI</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Speech" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Code\Hardware\ConsoleDisplayDevice.cs" />
+    <Compile Include="Code\Hardware\ConsoleInputDevice.cs" />
+    <Compile Include="Code\Hardware\ConsoleWriter.cs" />
+    <Compile Include="Code\Hardware\StandardAudioDevice.cs" />
+    <Compile Include="Code\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SnakeCommon\SnakeCommon.csproj">
+      <Project>{5a7ada5f-eb40-4c3e-953c-6215cb0f6bd3}</Project>
+      <Name>SnakeCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SnakeCore\SnakeCore.csproj">
+      <Project>{d7aabd81-3712-4449-b03b-f8bfd6f96bac}</Project>
+      <Name>SnakeCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SnakeGame\SnakeGame.csproj">
+      <Project>{f21e1db0-f92c-447f-9636-e1e4018dd032}</Project>
+      <Name>SnakeGame</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SnakeHardware\SnakeHardware.csproj">
+      <Project>{0395c958-3779-4260-b046-b7ec2e7f1d3e}</Project>
+      <Name>SnakeHardware</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SnakeShared\SnakeShared.csproj">
+      <Project>{5C16959B-F1A6-4529-A936-AD83A04FBF53}</Project>
+      <Name>SnakeShared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SnakeText\SnakeText.csproj">
+      <Project>{c060dd99-da0b-4075-af60-7d7c74450371}</Project>
+      <Name>SnakeText</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
