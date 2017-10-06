@@ -14,9 +14,6 @@ namespace Snake.Game.Core
         //====== public virtual methods -- lifecycle =======================================================================================
 
         public virtual void Initialize (GameTime gameTime) { } // TODO: can be called second time when re-entering module, need fix
-        public virtual void Destroy    () { }
-        public virtual void Enter      () { }
-        public virtual void Leave      () { }
 
         //====== public virtual methods -- flow ============================================================================================
 

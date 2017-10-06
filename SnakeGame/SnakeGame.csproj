@@ -64,7 +64,6 @@
     <Compile Include="Code\GameModule\GameModuleContext.cs" />
     <Compile Include="Code\GameModule\GameModuleActivator.cs" />
     <Compile Include="Code\GameModule\IGameModuleContext.cs" />
-    <Compile Include="Code\GameModule\GameModuleNavigator.cs" />
     <Compile Include="Code\FancyEffects\GameAnimations.cs" />
     <Compile Include="Code\FancyEffects\Animations\Animation.cs" />
     <Compile Include="Code\FancyEffects\Animations\AnimationFrames.cs" />

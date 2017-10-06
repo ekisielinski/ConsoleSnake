@@ -38,15 +38,9 @@ namespace Snake.Text
         //====== operators =================================================================================================================
 
 
-        public static bool operator == (TextCell left, TextCell right)
-        {
-            return left.Equals (right);
-        }
+        public static bool operator == (TextCell left, TextCell right) => left.Equals (right);
+        public static bool operator != (TextCell left, TextCell right) => left.Equals (right) == false;
 
-        public static bool operator != (TextCell left, TextCell right)
-        {
-            return !(left == right);
-        }
         //====== override: Object ==========================================================================================================
 
         public override bool Equals (object obj)

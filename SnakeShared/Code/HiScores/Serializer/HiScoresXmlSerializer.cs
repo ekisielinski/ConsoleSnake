@@ -54,8 +54,15 @@ namespace Snake.Shared
 
         private sealed class __HiScores
         {
-            [DataMember (Name = "Players")] public List<__HiScoresEntry> List     { get; set; }
-            [DataMember]                 public int                   Capacity { get; set; }
+            [DataMember (Name = "Players")]
+
+            public List<__HiScoresEntry> List { get; set; }
+
+            //------------------------------------------------------------------------------------------------------------------------------
+
+            [DataMember]
+
+            public int Capacity { get; set; }
 
             //====== public methods ========================================================================================================
 
@@ -70,15 +77,15 @@ namespace Snake.Shared
 
             //------------------------------------------------------------------------------------------------------------------------------
 
-            public static __HiScores FromHiScores (IHiScores hiScoresList)
+            public static __HiScores FromHiScores (IHiScores hiScores)
             {
-                Verify.NotNull (hiScoresList, nameof (hiScoresList));
+                Verify.NotNull (hiScores, nameof (hiScores));
 
-                List<__HiScoresEntry> entries = hiScoresList.GetList ().Select (x => __HiScoresEntry.FromHiScoresEntry (x)).ToList ();
+                List<__HiScoresEntry> entries = hiScores.GetList ().Select (x => __HiScoresEntry.FromHiScoresEntry (x)).ToList ();
 
                 return new __HiScores
                 {
-                    Capacity = hiScoresList.Capacity,
+                    Capacity = hiScores.Capacity,
                     List     = entries
                 };
             }
