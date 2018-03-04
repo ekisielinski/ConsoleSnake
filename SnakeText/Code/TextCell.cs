@@ -37,7 +37,6 @@ namespace Snake.Text
 
         //====== operators =================================================================================================================
 
-
         public static bool operator == (TextCell left, TextCell right) => left.Equals (right);
         public static bool operator != (TextCell left, TextCell right) => left.Equals (right) == false;
 
