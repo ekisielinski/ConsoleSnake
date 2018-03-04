@@ -3,4 +3,4 @@ Snake -- console based game
 
 Startup project: **SnakeConsoleUI**
 
-[View GIF](http://imgbox.com/nUoXPQkS)
+![Screenshot](/Images/Snake.gif)
