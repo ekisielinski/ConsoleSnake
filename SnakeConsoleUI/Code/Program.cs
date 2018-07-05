@@ -18,7 +18,7 @@ namespace SnakeConsoleUI
 
             var inputDevice = new ConsoleInputDevice ();
 
-            var displayDevice = new ConsoleDisplayDevice (new Size (100, 30), "snake");
+            var displayDevice = new ConsoleDisplayDevice (new Size (100, 30), "(( Snake ))");
             displayDevice.Initialize ();
 
             var audioDevice = new StandardAudioDevice ();
