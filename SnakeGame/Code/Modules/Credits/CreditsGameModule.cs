@@ -41,7 +41,7 @@ namespace Snake.Game.Modules
             canvas.WriteTextCenter (10, "Special thanks to:", Color16.LightTeal, Color16.Black);
             canvas.WriteTextCenter (12, "me :)", Color16.Yellow, Color16.Black);
 
-            canvas.WriteTextCenter (15, "2 0 1 7", Color16.Silver, Color16.Black);
+            canvas.WriteTextCenter (15, "2017-2018", Color16.Silver, Color16.Black);
 
             canvas.WriteTextCenter (18, "Created by: Eryk Kisieliński", Color16.Gray, Color16.Black);
 
