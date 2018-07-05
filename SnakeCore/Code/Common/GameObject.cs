@@ -11,7 +11,7 @@ namespace Snake.Core
 
         //====== ctors =====================================================================================================================
 
-        public GameObject (GameTime gameTime)
+        protected GameObject (GameTime gameTime)
         {
             this.gameTime = Verify.NotNull (gameTime, nameof (gameTime));
         }

@@ -36,7 +36,7 @@ namespace Snake.Common.Geometry
 
             return new Size (w, h);
         }
-        
+
         //====== public static properties ==================================================================================================
 
         public static Size Zero => new Size ();

@@ -25,10 +25,7 @@ namespace Snake.Core
 
         //====== override: GameObject ======================================================================================================
 
-        protected override void UpdateImpl ()
-        {
-            CheckConditions ();
-        }
+        protected override void UpdateImpl () => CheckConditions ();
 
         //====== private methods ===========================================================================================================
 
@@ -39,18 +36,21 @@ namespace Snake.Core
             if (snakeBody.IsConsumingTail)
             {
                 Reason = "You ate yourself.";
+
                 return;
             }
 
             if (terrain.Size.AsRectangle.Contains (snakeBody.Head ()) == false)
             {
                 Reason = "You left the field.";
+
                 return;
             }
 
             if (applesGenerator.IsApplesLimitReached)
             {
                 Reason = $"Too many apples on the field ({applesGenerator.MaxApples}).";
+
                 return;
             }
         }

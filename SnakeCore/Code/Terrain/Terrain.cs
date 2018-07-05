@@ -27,7 +27,7 @@ namespace Snake.Core
 
             entities.Add (entity);
         }
-        
+
         //----------------------------------------------------------------------------------------------------------------------------------
 
         public void RemoveAll (Predicate<TerrainEntity> predicate) => entities.RemoveAll (predicate);

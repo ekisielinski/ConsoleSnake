@@ -15,7 +15,7 @@ namespace Snake.Shared
             var serializer = new DataContractSerializer (typeof (__HiScores));
 
             var stream = new MemoryStream (Encoding.UTF8.GetBytes (xml));
-           
+
             var result = (__HiScores) serializer.ReadObject (stream);
 
             return result.ToHiScoresList ();
@@ -30,7 +30,7 @@ namespace Snake.Shared
             var serializer = new DataContractSerializer (typeof (__HiScores));
 
             var stream = new MemoryStream ();
-           
+
             var __hiScores = __HiScores.FromHiScores (hiScores);
 
             serializer.WriteObject (stream, __hiScores);

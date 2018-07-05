@@ -38,7 +38,7 @@ namespace Snake.Hardware.Input
         public static KeyData FromType      (KeyType type)   => new KeyData (null, type);
 
         //====== public static properties ==================================================================================================
-        
+
         public static KeyData Null { get; } = new KeyData (null, null);
 
         //====== override: Object ==========================================================================================================
@@ -56,7 +56,7 @@ namespace Snake.Hardware.Input
 
             return KeyChar == other.KeyChar && KeyType == other.KeyType;
         }
-        
+
         //----------------------------------------------------------------------------------------------------------------------------------
 
         public override int GetHashCode () => KeyChar.HasValue ? KeyChar.GetHashCode () : KeyType.GetHashCode ();

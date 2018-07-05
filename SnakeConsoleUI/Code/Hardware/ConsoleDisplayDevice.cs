@@ -23,7 +23,7 @@ namespace SnakeConsoleUI.Hardware
         {
             this.title = title;
         }
-     
+
         //====== override: DisplayDevice ===================================================================================================
 
         protected override void InitializeDevice ()

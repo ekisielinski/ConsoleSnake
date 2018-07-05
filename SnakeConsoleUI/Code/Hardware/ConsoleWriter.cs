@@ -5,7 +5,7 @@ using System.Text;
 namespace SnakeConsoleUI.Hardware
 {
     /// <summary>
-    /// For faster writing on console window.
+    /// For faster writing to the console window.
     /// Characters with the same fore and back color placed sequentially are written in one Console.Write call.
     /// </summary>
 

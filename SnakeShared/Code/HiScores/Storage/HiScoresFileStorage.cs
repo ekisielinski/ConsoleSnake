@@ -10,7 +10,7 @@ namespace Snake.Shared
     {
         readonly IHiScoresSerializer serializer;
         readonly ILogger logger;
-        
+
         //====== ctors =====================================================================================================================
 
         public HiScoresFileStorage (string fileName, IHiScoresSerializer serializer, ILogger logger)

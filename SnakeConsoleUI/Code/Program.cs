@@ -17,7 +17,7 @@ namespace SnakeConsoleUI
             logger.Log ("Initializing devices...", false);
 
             var inputDevice = new ConsoleInputDevice ();
-            
+
             var displayDevice = new ConsoleDisplayDevice (new Size (100, 30), "snake");
             displayDevice.Initialize ();
 

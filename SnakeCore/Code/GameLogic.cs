@@ -15,10 +15,10 @@ namespace SnakeGame.Core
 
         readonly SnakeBody          snakeBody;
         readonly SnakeSpeed         speed;
-            
+
         readonly AppleGenerator     applesGenerator;
         readonly AppleConsumer      applesConsumer;
-        
+
         readonly TerrainUpdater     terrainUpdater;
 
         readonly GameOverConditions gameOverConditions;

@@ -10,7 +10,7 @@ namespace Snake.Core
 
             GameTime = new GameTime (this);
         }
-        
+
         //====== IGameTimeSource ===========================================================================================================
 
         public long Tick { get; private set; } = 0;
