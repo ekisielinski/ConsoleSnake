@@ -10,11 +10,9 @@ namespace SnakeConsoleUI.Hardware
     {
         SpeechSynthesizer synth;
 
-        //====== IAudioDevice ==============================================================================================================
+        //====== IAudioDevice
 
         public void Beep () => Task.Run (() => Console.Beep (1500, 50));
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public void SpeakAsync (string message)
         {
@@ -26,11 +24,11 @@ namespace SnakeConsoleUI.Hardware
             synth.SpeakAsync (prompt);
         }
 
-        //====== IDisposable ===============================================================================================================
+        //====== IDisposable
 
         public void Dispose () => synth?.Dispose ();
 
-        //====== private methods ===========================================================================================================
+        //====== private methods
 
         private void Init ()
         {

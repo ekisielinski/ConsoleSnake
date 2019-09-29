@@ -18,7 +18,7 @@ namespace SnakeConsoleUI.Hardware
 
         bool isDisposed = false;
 
-        //====== public methods ============================================================================================================
+        //====== public methods
 
         public void WriteCell (TextCell cell)
         {
@@ -37,11 +37,9 @@ namespace SnakeConsoleUI.Hardware
             sb.Append (cell.Character);
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         public void Close () => Dispose ();
 
-        //====== IDisposable ===============================================================================================================
+        //====== IDisposable
 
         public void Dispose ()
         {
@@ -52,7 +50,7 @@ namespace SnakeConsoleUI.Hardware
             }
         }
 
-        //====== private methods ===========================================================================================================
+        //====== private methods
 
         private void FlushBuffer ()
         {

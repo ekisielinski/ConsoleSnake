@@ -13,18 +13,16 @@ namespace SnakeConsoleUI.Hardware
         const int MinHeight = 10;
         const int MaxHeight = 200;
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         readonly string title;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public ConsoleDisplayDevice (Size screenSize, string title) : base (ValidateScreenSize (screenSize))
         {
             this.title = title;
         }
 
-        //====== override: DisplayDevice ===================================================================================================
+        //====== override: DisplayDevice
 
         protected override void InitializeDevice ()
         {
@@ -44,8 +42,6 @@ namespace SnakeConsoleUI.Hardware
 
             Console.Clear ();
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         protected override void UpdateDeviceImpl ()
         {
@@ -67,7 +63,7 @@ namespace SnakeConsoleUI.Hardware
             Console.CursorVisible = false; // avoids cursor blinking after window resize
         }
 
-        //====== private static methods ====================================================================================================
+        //====== private static methods
 
         private static Size ValidateScreenSize (Size size)
         {

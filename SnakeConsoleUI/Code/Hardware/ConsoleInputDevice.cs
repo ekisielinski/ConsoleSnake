@@ -9,7 +9,7 @@ namespace SnakeConsoleUI.Hardware
     {
         readonly Queue<KeyData> buffer = new Queue<KeyData> ();
 
-        //====== IInputDevice ==============================================================================================================
+        //====== IInputDevice
 
         public KeyData Peek ()
         {
@@ -23,8 +23,6 @@ namespace SnakeConsoleUI.Hardware
             return KeyData.Null;
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         public KeyData Read ()
         {
             EnqueueBuffer ();
@@ -37,7 +35,7 @@ namespace SnakeConsoleUI.Hardware
             return KeyData.Null;
         }
 
-        //====== private methods ===========================================================================================================
+        //====== private methods
 
         private void EnqueueBuffer ()
         {
@@ -53,8 +51,6 @@ namespace SnakeConsoleUI.Hardware
                 }
             }
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         private KeyData ConsoleKeyInfoToKeyData (ConsoleKeyInfo cki)
         {
