@@ -7,18 +7,18 @@ namespace Snake.Hardware.Audio
     {
         readonly IAudioDevice audioDevice;
 
-        //====== ctors =================================================================================================================
+        //====== ctors
 
         public DisableableAudioDevice (IAudioDevice audioDevice)
         {
             this.audioDevice = Verify.NotNull (audioDevice, nameof (audioDevice));
         }
 
-        //====== public properties =====================================================================================================
+        //====== public properties
 
         public bool IsDisabled { get; set; } = false;
 
-        //====== IAudioDevice ==========================================================================================================
+        //====== IAudioDevice
 
         public void Beep ()
         {
@@ -27,8 +27,6 @@ namespace Snake.Hardware.Audio
             audioDevice.Beep ();
         }
 
-        //------------------------------------------------------------------------------------------------------------------------------
-
         public void SpeakAsync (string message)
         {
             ThrowIfDisabled ();
@@ -36,7 +34,7 @@ namespace Snake.Hardware.Audio
             audioDevice.SpeakAsync (message);
         }
 
-        //====== private methods =======================================================================================================
+        //====== private methods
 
         private void ThrowIfDisabled ()
         {

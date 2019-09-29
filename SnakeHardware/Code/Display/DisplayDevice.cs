@@ -10,7 +10,7 @@ namespace Snake.Hardware.Display
 
         readonly FPSCounter fpsCounter = new FPSCounter ();
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         protected DisplayDevice (Size screenSize)
         {
@@ -19,15 +19,13 @@ namespace Snake.Hardware.Display
             lastUpdateGeneration = ScreenBuffer.Generation - 1; // dirty
         }
 
-        //====== IFPSCounter ===============================================================================================================
+        //====== IFPSCounter
 
         public int FPS => fpsCounter.FPS;
 
-        //====== IDisplayDevice ============================================================================================================
+        //====== IDisplayDevice
 
         public ScreenBuffer ScreenBuffer { get; private set; }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public void UpdateDevice ()
         {
@@ -42,12 +40,12 @@ namespace Snake.Hardware.Display
             }
         }
 
-        //====== protected abstract methods ================================================================================================
+        //====== protected abstract methods
 
         protected abstract void InitializeDevice ();
         protected abstract void UpdateDeviceImpl ();
 
-        //====== public methods ============================================================================================================
+        //====== public methods
 
         public void Initialize ()
         {
@@ -60,7 +58,7 @@ namespace Snake.Hardware.Display
             fpsCounter.StartMeasuring ();
         }
 
-        //====== private methods ===========================================================================================================
+        //====== private methods
 
         private void ThrowIfNotInitialized ()
         {

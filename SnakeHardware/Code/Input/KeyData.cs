@@ -25,27 +25,25 @@ namespace Snake.Hardware.Input
             KeyType = keyType;
         }
 
-        //====== public properties =========================================================================================================
+        //====== public properties
 
         public char?    KeyChar { get; }
         public KeyType? KeyType { get; }
 
         public bool IsNull => KeyChar == null && KeyType == null;
 
-        //====== public static methods =====================================================================================================
+        //====== public static methods
 
         public static KeyData FromCharacter (char character) => new KeyData (character, null);
         public static KeyData FromType      (KeyType type)   => new KeyData (null, type);
 
-        //====== public static properties ==================================================================================================
+        //====== public static properties
 
         public static KeyData Null { get; } = new KeyData (null, null);
 
-        //====== override: Object ==========================================================================================================
+        //====== override: Object
 
         public override string ToString () => "Key: " + (KeyChar.HasValue ? KeyChar.ToString () : KeyType.ToString ());
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public override bool Equals (object obj)
         {
@@ -56,8 +54,6 @@ namespace Snake.Hardware.Input
 
             return KeyChar == other.KeyChar && KeyType == other.KeyType;
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public override int GetHashCode () => KeyChar.HasValue ? KeyChar.GetHashCode () : KeyType.GetHashCode ();
     }

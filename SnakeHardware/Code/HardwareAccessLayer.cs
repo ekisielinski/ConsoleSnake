@@ -14,7 +14,7 @@ namespace Snake.Hardware
             AudioDevice   = Verify.NotNull (audioDevice,   nameof (audioDevice  ));
         }
 
-        //====== public properties =========================================================================================================
+        //====== public properties
 
         public IInputDevice   InputDevice   { get; }
         public IDisplayDevice DisplayDevice { get; }

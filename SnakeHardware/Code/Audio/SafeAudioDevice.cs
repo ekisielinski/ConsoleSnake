@@ -11,7 +11,7 @@ namespace Snake.Hardware.Audio
 
         bool exceptionOccurred = false;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public SafeAudioDevice (IAudioDevice audioDevice, ILogger logger)
         {
@@ -19,7 +19,7 @@ namespace Snake.Hardware.Audio
             this.logger      = Verify.NotNull (logger, nameof (logger));
         }
 
-        //====== IAudioDevice ==============================================================================================================
+        //====== IAudioDevice
 
         public void Beep ()
         {
@@ -36,8 +36,6 @@ namespace Snake.Hardware.Audio
                 logger.Log (ex);
             }
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public void SpeakAsync (string message)
         {

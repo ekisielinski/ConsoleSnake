@@ -9,11 +9,11 @@ namespace Snake.Hardware.Display
             ScreenBuffer = new ScreenBuffer (screenSize);
         }
 
-        //====== IFPSCounter ===============================================================================================================
+        //====== IFPSCounter
 
         public int FPS => 0;
 
-        //====== IDisplayDevice ============================================================================================================
+        //====== IDisplayDevice
 
         public ScreenBuffer ScreenBuffer { get; }
 

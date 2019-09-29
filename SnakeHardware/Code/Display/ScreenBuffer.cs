@@ -8,18 +8,16 @@ namespace Snake.Hardware.Display
     {
         readonly TextImage buffer;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public ScreenBuffer (Size size) : base (size)
         {
             buffer = new TextImage (size);
         }
 
-        //====== override: TextArray2D =====================================================================================================
+        //====== override: TextArray2D
 
         protected override TextCell? Read (int x, int y) => buffer[x, y];
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         protected override void Write (int x, int y, TextCell? cell)
         {
@@ -34,7 +32,7 @@ namespace Snake.Hardware.Display
             }
         }
 
-        //====== public properties =========================================================================================================
+        //====== public properties
 
         public long Generation { get; private set; } = 0;
     }

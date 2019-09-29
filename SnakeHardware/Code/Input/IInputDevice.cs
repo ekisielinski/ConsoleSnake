@@ -9,8 +9,6 @@ namespace Snake.Hardware.Input
         KeyData Read ();
     }
 
-    //--------------------------------------------------------------------------------------------------------------------------------------
-
     public static class IInputDeviceExtensions
     {
         public static void Clear (this IInputDevice me)
@@ -19,8 +17,6 @@ namespace Snake.Hardware.Input
 
             while (me.Read ().IsNull == false) { }
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public static KeyData TryReadKeys (this IInputDevice me, params KeyData[] keys)
         {
@@ -36,8 +32,6 @@ namespace Snake.Hardware.Input
             return KeyData.Null;
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         public static KeyData TryReadKeys (this IInputDevice me, params KeyType[] keys)
         {
             Verify.NotNull (me, nameof (me));
@@ -48,16 +42,12 @@ namespace Snake.Hardware.Input
             return me.TryReadKeys (keyDataList);
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         public static bool TryReadKey (this IInputDevice me, KeyType key)
         {
             Verify.NotNull (me, nameof (me));
 
             return me.TryReadKeys (key).IsNull == false;
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public static KeyData TryReadKeys (this IInputDevice me, params char[] keys)
         {

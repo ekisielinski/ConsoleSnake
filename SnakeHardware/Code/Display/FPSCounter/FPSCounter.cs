@@ -15,22 +15,20 @@ namespace Snake.Hardware.Display
 
         DateTime? lastTimestamp = null;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public FPSCounter (TimeSpan? updateDelay = null)
         {
             this.updateDelay = updateDelay ?? TimeSpan.FromSeconds (0.5);
         }
 
-        //====== IFPSCounter ===============================================================================================================
+        //====== IFPSCounter
 
         public int FPS { get; private set; }
 
-        //====== public methods ============================================================================================================
+        //====== public methods
 
         public void StartMeasuring () => stopwatch.Start ();
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public void StopMeasuring ()
         {
@@ -41,8 +39,6 @@ namespace Snake.Hardware.Display
 
             FPS = 0;
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public void Update ()
         {
@@ -64,7 +60,7 @@ namespace Snake.Hardware.Display
             }
         }
 
-        //====== private methods ===========================================================================================================
+        //====== private methods
 
         private TimeSpan GetQueueDuration ()
         {
@@ -72,8 +68,6 @@ namespace Snake.Hardware.Display
 
             return lastTimestamp.Value - timestamps.Peek ();
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         private void ReduceQueueDuration ()
         {
