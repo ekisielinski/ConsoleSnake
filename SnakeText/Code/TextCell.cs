@@ -13,41 +13,35 @@ namespace Snake.Text
             BackColor = backColor;
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         public static TextCell DefaultEmpty => new TextCell (' ', Color16.Silver, Color16.Black);
 
-        //====== public properties =========================================================================================================
+        //====== public properties
 
         public char    Character { get; }
 
         public Color16 ForeColor { get; }
         public Color16 BackColor { get; }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         public bool IsValid => MiscUtils.IsVisibleAscii (Character);
 
-        //====== IEquatable<TextCell> ======================================================================================================
+        //====== IEquatable<TextCell>
 
         public bool Equals (TextCell other)
         {
             return Character == other.Character && ForeColor == other.ForeColor && BackColor == other.BackColor;
         }
 
-        //====== operators =================================================================================================================
+        //====== operators
 
         public static bool operator == (TextCell left, TextCell right) => left.Equals (right);
         public static bool operator != (TextCell left, TextCell right) => left.Equals (right) == false;
 
-        //====== override: Object ==========================================================================================================
+        //====== override: Object
 
         public override bool Equals (object obj)
         {
             return (obj is TextCell) ? Equals ((TextCell) obj) : false;
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public override int GetHashCode ()
         {
@@ -59,8 +53,6 @@ namespace Snake.Text
 
             return hash;
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public override string ToString () => Character.ToString ();
     }

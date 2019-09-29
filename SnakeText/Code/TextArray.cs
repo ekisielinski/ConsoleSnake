@@ -11,16 +11,14 @@ namespace Snake.Text
             Size = size;
         }
 
-        //====== abstract methods ==========================================================================================================
+        //====== abstract methods
 
         protected abstract void      Write (int x, int y, TextCell? cell);
         protected abstract TextCell? Read  (int x, int y);
 
-        //====== ITextArrayReader ==========================================================================================================
+        //====== ITextArrayReader
 
         public Size Size { get; }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public TextCell? this[int x, int y]
         {
@@ -37,7 +35,7 @@ namespace Snake.Text
             }
         }
 
-        //====== public methods ============================================================================================================
+        //====== public methods
 
         public string Stringify ()
         {
@@ -58,7 +56,7 @@ namespace Snake.Text
             return sb.ToString ();
         }
 
-        //====== private methods ===========================================================================================================
+        //====== private methods
 
         private void ThrowIfInvalidCoords (int x, int y)
         {
@@ -68,7 +66,7 @@ namespace Snake.Text
             }
         }
 
-        //====== override: Object ==========================================================================================================
+        //====== override: Object
 
         public override string ToString () => Stringify ();
     }

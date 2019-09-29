@@ -10,18 +10,18 @@ namespace Snake.Text
     {
         readonly TextArray textArray;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public TextCanvas (TextArray textArray)
         {
             this.textArray = Verify.NotNull (textArray, nameof (textArray));
         }
 
-        //====== public properties =========================================================================================================
+        //====== public properties
 
         public Size Size => textArray.Size;
 
-        //====== public methods ============================================================================================================
+        //====== public methods
 
         #region basic
 
@@ -32,20 +32,14 @@ namespace Snake.Text
             textArray[position.X, position.Y] = cell;
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         public void Clear () => Fill (null);
 
         public void ClearColor (Color16 backColor = Color16.Black) => Fill (new TextCell (' ', backColor, backColor));
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public void Fill (TextCell? cell)
         {
             foreach (var coord in EnumerateCoords ()) Write (coord, cell);
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public void WriteColor (Point position, Color16? foreColor, Color16? backColor)
         {
@@ -77,8 +71,6 @@ namespace Snake.Text
 
         #endregion
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         #region text
 
         public void WriteText (Point position, string message, Color16 foreColor, Color16 backColor)
@@ -91,8 +83,6 @@ namespace Snake.Text
             }
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         public void WriteTextCenter (int y, string message, Color16 foreColor, Color16 backColor)
         {
             int maxLineLength = message.Split (new string[] { "\r\n" }, StringSplitOptions.None).Max (x => x.Length);
@@ -101,8 +91,6 @@ namespace Snake.Text
 
             WriteText (position, message, foreColor, backColor);
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         private void WriteLine (Point position, string message, Color16 foreColor, Color16 backColor)
         {
@@ -120,8 +108,6 @@ namespace Snake.Text
 
         #endregion
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         #region frames
 
         public void HLine (Point startPosition, int length, TextCell cell)
@@ -134,8 +120,6 @@ namespace Snake.Text
             }
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         public void VLine (Point startPosition, int length, TextCell cell)
         {
             if (length < 1 || startPosition.X < 0 || startPosition.X >= Size.Width) return;
@@ -145,8 +129,6 @@ namespace Snake.Text
                 Write (startPosition.AddToY (i), cell);
             }
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public void Frame (Rectangle area, Color16 foreColor, Color16 backColor, bool thin = false)
         {
@@ -180,8 +162,6 @@ namespace Snake.Text
         }
 
         #endregion
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         #region images
 
@@ -217,13 +197,9 @@ namespace Snake.Text
 
         #endregion
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         #region effects
 
         public void Grayscale () => Colorize (Color16.Gray, Color16.Black);
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public void Colorize (Color16? foreColor, Color16? backColor)
         {
@@ -236,8 +212,6 @@ namespace Snake.Text
         }
 
         #endregion
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         #region helpers
 
@@ -252,24 +226,20 @@ namespace Snake.Text
             }
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         public TextCanvas Slice (Rectangle viewArea) => new TextCanvas (new TextArraySlice (textArray, viewArea));
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public TextImage ToTextImage () => TextImage.CreateCopyFrom (textArray);
 
         #endregion
 
-        //====== private methods ===========================================================================================================
+        //====== private methods
 
         private bool AreCoordsOutOfRange (Point position)
         {
             return position.X < 0 || position.X >= Size.Width || position.Y < 0 || position.Y >= Size.Height;
         }
 
-        //====== override: Object ==========================================================================================================
+        //====== override: Object
 
         public override string ToString () => $"{nameof (TextCanvas)} {Size}";
     }

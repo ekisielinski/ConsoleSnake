@@ -10,26 +10,25 @@ namespace Snake.Text
 
         TextCanvas canvas;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public TextImage (Size size) : base (size)
         {
             cells = new TextCell?[size.Width, size.Height];
         }
 
-        //====== override: TextArray =======================================================================================================
+        //====== override: TextArray
 
         protected override void Write (int x, int y, TextCell? cell) => cells[x, y] = cell;
 
         protected override TextCell? Read (int x, int y) => cells[x, y];
 
-        //====== public properties =========================================================================================================
+        //====== public properties
 
         [DebuggerBrowsable (DebuggerBrowsableState.Never)]
-
         public TextCanvas Canvas => canvas ?? (canvas = new TextCanvas (this));
 
-        //====== public static methods =====================================================================================================
+        //====== public static methods
 
         public static TextImage CreateCopyFrom (ITextArrayReader textArray)
         {

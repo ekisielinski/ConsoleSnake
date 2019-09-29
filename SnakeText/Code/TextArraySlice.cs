@@ -9,7 +9,7 @@ namespace Snake.Text
 
         Rectangle intersection;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public TextArraySlice (TextArray source, Rectangle viewArea) : base (viewArea.Size)
         {
@@ -18,7 +18,7 @@ namespace Snake.Text
             intersection = source.Size.AsRectangle.Intersect (viewArea);
         }
 
-        //====== override: TextArray =======================================================================================================
+        //====== override: TextArray
 
         protected override void Write (int x, int y, TextCell? cell)
         {
@@ -30,8 +30,6 @@ namespace Snake.Text
                 source[dstX, dstY] = cell;
             }
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         protected override TextCell? Read (int x, int y)
         {
