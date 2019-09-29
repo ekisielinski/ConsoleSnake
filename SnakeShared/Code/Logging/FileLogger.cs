@@ -9,25 +9,25 @@ namespace Snake.Shared
     {
         bool isDisabled = false;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public FileLogger (string fileName)
         {
             FileName = Verify.NotNull (fileName, nameof (fileName));
         }
 
-        //====== public properties =========================================================================================================
+        //====== public properties
 
         public string FileName { get; }
 
-        //====== public methods ============================================================================================================
+        //====== public methods
 
         public void DeleteLogFile ()
         {
             try { File.Delete (FileName); } catch { } // I don't care
         }
 
-        //====== ILogger ===================================================================================================================
+        //====== ILogger
 
         public void Log (string message, bool isError)
         {
@@ -35,7 +35,7 @@ namespace Snake.Shared
 
             try
             {
-                string errorPrefix = isError ? "ERROR :: " : "";
+                string errorPrefix = isError ? "ERROR :: " : string.Empty;
 
                 File.AppendAllText (FileName, $"{DateTime.Now} :: {errorPrefix}{message}\r\n");
             }

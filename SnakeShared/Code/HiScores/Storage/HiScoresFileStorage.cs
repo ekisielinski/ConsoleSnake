@@ -11,7 +11,7 @@ namespace Snake.Shared
         readonly IHiScoresSerializer serializer;
         readonly ILogger logger;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public HiScoresFileStorage (string fileName, IHiScoresSerializer serializer, ILogger logger)
         {
@@ -21,11 +21,11 @@ namespace Snake.Shared
             this.logger     = Verify.NotNull (logger, nameof (logger));
         }
 
-        //====== public properties =========================================================================================================
+        //====== public properties
 
         public string FileName { get; }
 
-        //====== IHiScoresStorage ==========================================================================================================
+        //====== IHiScoresStorage
 
         public IHiScores Load ()
         {
@@ -44,8 +44,6 @@ namespace Snake.Shared
                 return new HiScores ();
             }
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public void Save (IHiScores hiScores)
         {

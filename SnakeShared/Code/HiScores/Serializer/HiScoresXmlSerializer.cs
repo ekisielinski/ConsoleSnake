@@ -21,8 +21,6 @@ namespace Snake.Shared
             return result.ToHiScoresList ();
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         public string ToXml (IHiScores hiScores)
         {
             Verify.NotNull (hiScores, nameof (hiScores));
@@ -42,29 +40,24 @@ namespace Snake.Shared
             return streamReader.ReadToEnd ();
         }
 
-        //====== IHiScoresSerializer =======================================================================================================
+        //====== IHiScoresSerializer
 
         public IHiScores Deserialize (byte[] data) => FromXml (Encoding.UTF8.GetString (data));
 
         public byte[] Serialize (IHiScores hiScores) => Encoding.UTF8.GetBytes (ToXml (hiScores));
 
-        //====== helper classes ============================================================================================================
+        //====== helper classes
 
         [DataContract (Name = "HiScores")]
-
         private sealed class __HiScores
         {
             [DataMember (Name = "Players")]
-
             public List<__HiScoresEntry> List { get; set; }
 
-            //------------------------------------------------------------------------------------------------------------------------------
-
             [DataMember]
-
             public int Capacity { get; set; }
 
-            //====== public methods ========================================================================================================
+            //====== public methods
 
             public HiScores ToHiScoresList ()
             {
@@ -74,8 +67,6 @@ namespace Snake.Shared
 
                 return result;
             }
-
-            //------------------------------------------------------------------------------------------------------------------------------
 
             public static __HiScores FromHiScores (IHiScores hiScores)
             {
@@ -91,23 +82,18 @@ namespace Snake.Shared
             }
         }
 
-        //==================================================================================================================================
-
         [DataContract (Name = "Player")]
-
         private sealed class __HiScoresEntry
         {
             [DataMember] public string Name  { get; set; }
             [DataMember] public int    Score { get; set; }
 
-            //====== public methods ========================================================================================================
+            //====== public methods
 
             public HiScoresEntry ToHiScoresEntry ()
             {
                 return new HiScoresEntry (Name, Score);
             }
-
-            //------------------------------------------------------------------------------------------------------------------------------
 
             public static __HiScoresEntry FromHiScoresEntry (HiScoresEntry entry)
             {
