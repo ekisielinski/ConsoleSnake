@@ -10,7 +10,7 @@ namespace Snake.Core
     {
         readonly List<TerrainEntity> entities = new List<TerrainEntity> ();
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public Terrain (Size size)
         {
@@ -19,7 +19,7 @@ namespace Snake.Core
             Size = size;
         }
 
-        //====== public methods ============================================================================================================
+        //====== public methods
 
         public void Add (TerrainEntity entity)
         {
@@ -28,19 +28,17 @@ namespace Snake.Core
             entities.Add (entity);
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         public void RemoveAll (Predicate<TerrainEntity> predicate) => entities.RemoveAll (predicate);
 
         public int Count (Func<TerrainEntity, bool> predicate) => entities.Where (predicate).Count ();
 
-        //====== ITerrainEntityReader ======================================================================================================
+        //====== ITerrainEntityReader
 
         public Size Size { get; }
 
         public TerrainEntity GetEntityOrNull (Point position) => entities.FirstOrDefault (x => x.Position == position);
 
-        //====== override: Object ==========================================================================================================
+        //====== override: Object
 
         public override string ToString () => $"{nameof (Terrain)}: {Size}, Entities: {entities.Count}";
     }

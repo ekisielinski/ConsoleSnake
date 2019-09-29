@@ -9,11 +9,9 @@ namespace Snake.Core
     {
         public const int MaxSnakeLength = 200;
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         readonly List<Point> parts = new List<Point> ();
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public SnakeBody (Point startPosition, int length = 3, Direction tail = Direction.Up)
         {
@@ -29,25 +27,23 @@ namespace Snake.Core
             }
         }
 
-        //====== ISnakeBody ================================================================================================================
+        //====== ISnakeBody
 
         public IReadOnlyList<Point> Parts => parts.ToArray ();
 
-        //====== public properties =========================================================================================================
+        //====== public properties
 
         public int Length => parts.Count;
 
         public bool IsConsumingTail => parts.Skip (1).Any (x => x == parts[0]);
 
-        //====== public methods ============================================================================================================
+        //====== public methods
 
         public void MoveHead (Point destination)
         {
             parts.Insert (0, destination);
             parts.RemoveAt (parts.Count - 1);
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public void LengthenTail ()
         {
@@ -56,7 +52,7 @@ namespace Snake.Core
             parts.Add (parts.Last ());
         }
 
-        //====== IStatus ===================================================================================================================
+        //====== IStatus
 
         public IReadOnlyList<StatusItem> GetStatus ()
         {

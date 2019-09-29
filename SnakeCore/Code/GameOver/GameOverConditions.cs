@@ -8,7 +8,7 @@ namespace Snake.Core
         readonly Terrain        terrain;
         readonly AppleGenerator applesGenerator;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public GameOverConditions (SnakeBody snakeBody, Terrain terrain, AppleGenerator applesGenerator, GameTime gameTime) : base (gameTime)
         {
@@ -17,17 +17,17 @@ namespace Snake.Core
             this.applesGenerator = Verify.NotNull (applesGenerator, nameof (applesGenerator));
         }
 
-        //====== public properties =========================================================================================================
+        //====== public properties
 
         public string Reason { get; private set; } = string.Empty;
 
         public bool IsGameOver => Reason != string.Empty;
 
-        //====== override: GameObject ======================================================================================================
+        //====== override: GameObject
 
         protected override void UpdateImpl () => CheckConditions ();
 
-        //====== private methods ===========================================================================================================
+        //====== private methods
 
         private void CheckConditions ()
         {

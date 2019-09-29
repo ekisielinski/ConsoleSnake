@@ -9,22 +9,22 @@ namespace Snake.Core
 
         long? lastTick = null;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         protected GameObject (GameTime gameTime)
         {
             this.gameTime = Verify.NotNull (gameTime, nameof (gameTime));
         }
 
-        //====== public properties =========================================================================================================
+        //====== public properties
 
         public bool IsDead { get; protected set; }
 
-        //====== abstract ==================================================================================================================
+        //====== abstract
 
         protected abstract void UpdateImpl ();
 
-        //====== public methods ============================================================================================================
+        //====== public methods
 
         public void Update ()
         {

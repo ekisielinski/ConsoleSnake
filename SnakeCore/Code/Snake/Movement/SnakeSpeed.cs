@@ -10,11 +10,9 @@ namespace Snake.Core
 
         TimeSpan currentDelay = TimeSpan.FromMilliseconds (200);
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public SnakeSpeed () { /* for default values */ }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public SnakeSpeed (TimeSpan delayBetweenMoves, TimeSpan minDelayBetweenMoves, TimeSpan deltaStep)
         {
@@ -26,13 +24,13 @@ namespace Snake.Core
             if (deltaStep <= TimeSpan.Zero) throw new ArgumentOutOfRangeException ($"Invalid {nameof (deltaStep)}.");
         }
 
-        //====== public properties =========================================================================================================
+        //====== public properties
 
         public TimeSpan CurrentDelay => currentDelay;
 
         public bool HasMaxSpeed => currentDelay <= minDelay;
 
-        //====== public methods ============================================================================================================
+        //====== public methods
 
         public void Increase ()
         {
@@ -41,7 +39,7 @@ namespace Snake.Core
             currentDelay = (newDelay < minDelay) ? minDelay : newDelay;
         }
 
-        //====== IStatus ===================================================================================================================
+        //====== IStatus
 
         public IReadOnlyList<StatusItem> GetStatus ()
         {

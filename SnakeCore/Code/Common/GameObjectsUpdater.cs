@@ -9,11 +9,11 @@ namespace Snake.Core
     {
         private List<GameObject> list = new List<GameObject> ();
 
-        //====== public properties =========================================================================================================
+        //====== public properties
 
         public bool IsEmpty => list.Count == 0;
 
-        //====== public methods ============================================================================================================
+        //====== public methods
 
         public void Add (GameObject gameObject)
         {
@@ -27,7 +27,7 @@ namespace Snake.Core
             list.Add (gameObject);
         }
 
-        //====== IUpdateable ===============================================================================================================
+        //====== IUpdateable
 
         public void Update ()
         {
@@ -39,11 +39,11 @@ namespace Snake.Core
             }
         }
 
-        //====== private methods ===========================================================================================================
+        //====== private methods
 
         private void RemoveDead () => list.RemoveAll (x => x.IsDead);
 
-        //====== override: Object ==========================================================================================================
+        //====== override: Object
 
         public override string ToString () => $"{nameof (GameObjectsUpdater)} ({list.Count})";
     }

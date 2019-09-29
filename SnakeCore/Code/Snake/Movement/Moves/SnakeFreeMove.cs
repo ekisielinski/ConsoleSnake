@@ -7,7 +7,7 @@ namespace Snake.Core
     {
         readonly SnakeBody snakeBody;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public SnakeFreeMove (SnakeBody snakeBody, Direction initialDirection)
         {
@@ -16,11 +16,9 @@ namespace Snake.Core
             CurrentDirection = initialDirection;
         }
 
-        //====== ISnakeMover ===============================================================================================================
+        //====== ISnakeMover
 
         public Direction CurrentDirection { get; private set; }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public bool Move (Direction direction)
         {

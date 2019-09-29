@@ -10,8 +10,6 @@ namespace Snake.Core
         IReadOnlyList<Point> Parts { get; }
     }
 
-    //--------------------------------------------------------------------------------------------------------------------------------------
-
     public static class ISnakeBodyExtensions
     {
         public static Point Head (this ISnakeBody me)
@@ -20,8 +18,6 @@ namespace Snake.Core
 
             return me.Parts[0];
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public static IReadOnlyList<Point> Tail (this ISnakeBody me)
         {

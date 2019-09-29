@@ -7,18 +7,16 @@ namespace Snake.Core
     {
         readonly ISnakeMovementController snakeMover;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public SnakeValidMove (ISnakeMovementController snakeMover)
         {
             this.snakeMover = Verify.NotNull (snakeMover, nameof (snakeMover));
         }
 
-        //====== ISnakeMover ===============================================================================================================
+        //====== ISnakeMover
 
         public Direction CurrentDirection => snakeMover.CurrentDirection;
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public bool Move (Direction direction)
         {

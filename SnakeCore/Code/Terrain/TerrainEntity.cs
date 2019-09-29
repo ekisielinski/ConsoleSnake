@@ -9,15 +9,15 @@ namespace Snake.Core
             Position = position;
         }
 
-        //====== public properties =========================================================================================================
+        //====== public properties
 
         public Point Position { get; }
 
-        //====== public virtual properties =================================================================================================
+        //====== public virtual properties
 
         public virtual bool IsDead => false;
 
-        //====== override: Object ==========================================================================================================
+        //====== override: Object
 
         public override string ToString () => $"{Position} :: {GetType ().Name}" + (IsDead ? " (dead)" : string.Empty);
     }

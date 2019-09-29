@@ -9,8 +9,6 @@ namespace SnakeGame.Core
     {
         public event Action AppleConsumed;
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         readonly Terrain            terrain;
 
         readonly SnakeBody          snakeBody;
@@ -27,11 +25,9 @@ namespace SnakeGame.Core
 
         readonly SnakeMoveQueue     moveQueue;
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         readonly GameObjectsUpdater updater;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public GameLogic (Size terrainSize, GameTime gameTime) : base (gameTime)
         {
@@ -51,7 +47,7 @@ namespace SnakeGame.Core
 
             moveQueue          = new SnakeMoveQueue ();
 
-            //--
+            //---
 
             updater = new GameObjectsUpdater ();
             SetupGameObjectsUpdater ();
@@ -59,7 +55,7 @@ namespace SnakeGame.Core
             applesConsumer.Consumed += AppleConsumer_AppleConsumed;
         }
 
-        //====== override: GameObject ======================================================================================================
+        //====== override: GameObject
 
         protected override void UpdateImpl ()
         {
@@ -68,14 +64,14 @@ namespace SnakeGame.Core
             updater.Update ();
         }
 
-        //====== public properties =========================================================================================================
+        //====== public properties
 
         public ISnakeMoveQueue        DirectionChanger      => moveQueue;
         public ITerrainEntityReader   TerrainReader         => terrain;
         public IScoreStatus           ScoreStatus           => score;
         public IGameOverJustification GameOverJustification => gameOverConditions;
 
-        //====== private methods ===========================================================================================================
+        //====== private methods
 
         private void SetupGameObjectsUpdater ()
         {
@@ -85,8 +81,6 @@ namespace SnakeGame.Core
             updater.Add (applesConsumer);
             updater.Add (CreateSnakePositionUpdater ());
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         private void AppleConsumer_AppleConsumed (AppleEntity obj)
         {
@@ -98,8 +92,6 @@ namespace SnakeGame.Core
             AppleConsumed?.Invoke ();
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         private SnakePositionUpdater CreateSnakePositionUpdater ()
         {
             var anyMove     = new SnakeFreeMove     (snakeBody, Direction.Down);
@@ -109,7 +101,7 @@ namespace SnakeGame.Core
             return new SnakePositionUpdater (delayedMove, moveQueue, gameTime);
         }
 
-        //====== IStatus ===================================================================================================================
+        //====== IStatus
 
         public IReadOnlyList<StatusItem> GetStatus ()
         {

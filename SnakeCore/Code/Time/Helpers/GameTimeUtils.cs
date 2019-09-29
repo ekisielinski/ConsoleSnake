@@ -7,7 +7,7 @@ namespace Snake.Core
     {
         public const int MaxTicksPerSecond = 1000;
 
-        //----------------------------------------------------------------------------------------------------------------------------------
+        //====== public static methods
 
         public static long DurationToTicks (TimeSpan duration, int ticksPerSecond)
         {
@@ -19,8 +19,6 @@ namespace Snake.Core
 
             return ticks;
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public static TimeSpan TicksToDuration (long ticks, int ticksPerSecond)
         {
@@ -34,8 +32,6 @@ namespace Snake.Core
 
             return duration;
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public static TimeSpan DelayBetweenTicks (int ticksPerSecond)
         {

@@ -10,7 +10,7 @@ namespace Snake.Core
         readonly long startTick;
         readonly long endTick;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public GameTimeDelay (GameTime gameTime, TimeSpan duration)
         {
@@ -22,7 +22,7 @@ namespace Snake.Core
             endTick   = startTick + GameTimeUtils.DurationToTicks (duration, gameTime.TicksPerSecond);
         }
 
-        //====== public properties =========================================================================================================
+        //====== public properties
 
         public TimeSpan From           => GameTimeUtils.TicksToDuration (startTick, gameTime.TicksPerSecond);
         public TimeSpan To             => GameTimeUtils.TicksToDuration (endTick,   gameTime.TicksPerSecond);
@@ -32,8 +32,6 @@ namespace Snake.Core
         public long     RemainingTicks => Math.Max (0, endTick - gameTime.Tick);
 
         public bool     IsDone         => gameTime.Tick >= endTick;
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public int PercentageDone
         {
@@ -50,7 +48,7 @@ namespace Snake.Core
             }
         }
 
-        //====== public methods ============================================================================================================
+        //====== public methods
 
         public GameTimeDelay ReCreate () => new GameTimeDelay (gameTime, Duration);
     }

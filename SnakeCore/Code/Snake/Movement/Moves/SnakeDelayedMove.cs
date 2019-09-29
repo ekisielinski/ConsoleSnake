@@ -11,7 +11,7 @@ namespace Snake.Core
 
         GameTimeDelay moveDelay;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
 
         public SnakeDelayedMove (ISnakeMovementController snakeMover, SnakeSpeed snakeSpeed, GameTime gameTime)
@@ -23,11 +23,9 @@ namespace Snake.Core
             moveDelay = gameTime.CreateDelay (snakeSpeed.CurrentDelay);
         }
 
-        //====== ISnakeMover ===============================================================================================================
+        //====== ISnakeMover
 
         public Direction CurrentDirection => snakeMover.CurrentDirection;
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public bool Move (Direction direction)
         {

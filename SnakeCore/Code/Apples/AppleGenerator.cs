@@ -14,7 +14,7 @@ namespace Snake.Core
 
         readonly Random random = new Random ();
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public AppleGenerator (Terrain terrain, GameTime gameTime, int maxApples = 50) : base (gameTime)
         {
@@ -26,13 +26,13 @@ namespace Snake.Core
             delaySpawnTransientApple = gameTime.CreateDelay (TimeSpan.FromSeconds (8));
         }
 
-        //====== public properties =========================================================================================================
+        //====== public properties
 
         public int MaxApples { get; private set; }
 
         public bool IsApplesLimitReached => CountApples >= MaxApples;
 
-        //====== override: GameObject ======================================================================================================
+        //====== override: GameObject
 
         protected override void UpdateImpl ()
         {
@@ -40,11 +40,11 @@ namespace Snake.Core
             TrySpawnTransientApple ();
         }
 
-        //====== private properties ========================================================================================================
+        //====== private properties
 
         private int CountApples => terrain.Count (x => !x.IsDead && x is AppleEntity);
 
-        //====== private methods ===========================================================================================================
+        //====== private methods
 
         private void TrySpawnNormalApple ()
         {
@@ -55,8 +55,6 @@ namespace Snake.Core
                 delaySpawnNormalApple = gameTime.CreateDelay (TimeSpan.FromSeconds (2));
             }
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         private void TrySpawnTransientApple ()
         {
@@ -70,8 +68,6 @@ namespace Snake.Core
             }
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         private void GenerateAppleAtRandomPosition (AppleEntity.AppleType type)
         {
             var position = GetFreeRandomPosition ();
@@ -79,16 +75,12 @@ namespace Snake.Core
             GenerateApple (type, position);
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         private void GenerateApple (AppleEntity.AppleType type, Point position)
         {
             var apple = new AppleEntity (position, type, gameTime);
 
             terrain.Add (apple);
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         private Point GetFreeRandomPosition ()
         {
@@ -105,7 +97,7 @@ namespace Snake.Core
             }
         }
 
-        //====== IStatus ===================================================================================================================
+        //====== IStatus
 
         public IReadOnlyList<StatusItem> GetStatus ()
         {

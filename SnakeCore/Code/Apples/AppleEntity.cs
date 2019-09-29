@@ -10,19 +10,15 @@ namespace Snake.Core
         const int ScoreForNormal       = 8;
         const int MaxScoreForTransient = 60;
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         public enum AppleType
         {
             Normal,
             Transient // gives extra score, but will disappear after few seconds
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         readonly GameTime gameTime;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public AppleEntity (Point position, AppleType appleType, GameTime gameTime) : base (position)
         {
@@ -37,15 +33,13 @@ namespace Snake.Core
 
         public override bool IsDead => Type == AppleType.Transient && DelayBeforeDie.IsDone;
 
-        //====== public properties =========================================================================================================
+        //====== public properties
 
         public AppleType Type { get; }
 
         public GameTimeDelay DelayBeforeDie { get; }
 
         public bool IsDying => Type == AppleType.Transient && DelayBeforeDie.Remaining.TotalSeconds <= 5;
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public int Score
         {

@@ -9,14 +9,12 @@ namespace Snake.Core
     {
         public event Action<AppleEntity> Consumed;
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         readonly Terrain terrain;
         readonly ISnakeBody snakeBody;
 
         Dictionary<AppleEntity.AppleType, int> consumedApplesCounters;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public AppleConsumer (Terrain terrain, ISnakeBody snakeBody, GameTime gameTime) : base (gameTime)
         {
@@ -26,11 +24,11 @@ namespace Snake.Core
             InitializeCounters ();
         }
 
-        //====== IApplesConsumerStatus =====================================================================================================
+        //====== IApplesConsumerStatus
 
         public int CountConsumedApples (AppleEntity.AppleType appleType) => consumedApplesCounters[appleType];
 
-        //====== override: GameObject ======================================================================================================
+        //====== override: GameObject
 
         protected override void UpdateImpl ()
         {
@@ -44,7 +42,7 @@ namespace Snake.Core
             }
         }
 
-        //====== IStatus ===================================================================================================================
+        //====== IStatus
 
         public IReadOnlyList<StatusItem> GetStatus ()
         {
@@ -55,7 +53,7 @@ namespace Snake.Core
             };
         }
 
-        //====== private methods ===========================================================================================================
+        //====== private methods
 
         private void InitializeCounters ()
         {

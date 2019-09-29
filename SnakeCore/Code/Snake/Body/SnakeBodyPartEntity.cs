@@ -9,7 +9,7 @@ namespace Snake.Core
             IsHead = isHead;
         }
 
-        //====== public properties =========================================================================================================
+        //====== public properties
 
         public bool IsHead { get; }
     }

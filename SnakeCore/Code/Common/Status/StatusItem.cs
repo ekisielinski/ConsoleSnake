@@ -12,14 +12,14 @@ namespace Snake.Core
             IsValueCritical = isValueCritical;
         }
 
-        //====== public properties =========================================================================================================
+        //====== public properties
 
         public string Name  { get; }
         public string Value { get; }
 
         public bool IsValueCritical { get; }
 
-        //====== override: Object ==========================================================================================================
+        //====== override: Object
 
         public override string ToString () => $"{Name}: {Value}";
     }

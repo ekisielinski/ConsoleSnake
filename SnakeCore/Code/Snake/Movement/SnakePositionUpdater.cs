@@ -8,7 +8,7 @@ namespace Snake.Core
         readonly ISnakeMovementController movementController;
         readonly SnakeMoveQueue moveQueue;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public SnakePositionUpdater (ISnakeMovementController movementController, SnakeMoveQueue moveQueue, GameTime gameTime) : base (gameTime)
         {
@@ -16,7 +16,7 @@ namespace Snake.Core
             this.moveQueue  = Verify.NotNull (moveQueue, nameof (moveQueue));
         }
 
-        //====== override: GameObject ======================================================================================================
+        //====== override: GameObject
 
         protected override void UpdateImpl ()
         {

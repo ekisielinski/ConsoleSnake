@@ -7,7 +7,7 @@ namespace Snake.Core
         readonly Terrain terrain;
         readonly ISnakeBody snakeBody;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public TerrainUpdater (Terrain terrain, ISnakeBody snakeBody, GameTime gameTime) : base (gameTime)
         {
@@ -15,7 +15,7 @@ namespace Snake.Core
             this.snakeBody = Verify.NotNull (snakeBody, nameof (snakeBody));
         }
 
-        //====== override: gameObject ======================================================================================================
+        //====== override: gameObject
 
         protected override void UpdateImpl ()
         {
@@ -24,7 +24,7 @@ namespace Snake.Core
             UpdateSnakeBodyEntities ();
         }
 
-        //====== private methods ===========================================================================================================
+        //====== private methods
 
         private void UpdateSnakeBodyEntities ()
         {

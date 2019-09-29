@@ -10,14 +10,14 @@ namespace Snake.Core
 
         readonly Queue<Direction> queue = new Queue<Direction> ();
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public SnakeMoveQueue (int maxCapacity = 6)
         {
             this.maxCapacity = Verify.InRange (maxCapacity, 1, 20, nameof (maxCapacity));
         }
 
-        //====== public methods ============================================================================================================
+        //====== public methods
 
         public void Add (Direction direction)
         {
@@ -31,8 +31,6 @@ namespace Snake.Core
                 queue.Dequeue ();
             }
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public Direction? Peek () => queue.Count == 0 ? (Direction?) null : queue.Peek ();
 

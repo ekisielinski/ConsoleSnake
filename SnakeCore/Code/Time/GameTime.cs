@@ -7,27 +7,25 @@ namespace Snake.Core
     {
         readonly IGameTimeSource gameTimeSource;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public GameTime (IGameTimeSource gameTimeSource)
         {
             this.gameTimeSource = Verify.NotNull (gameTimeSource, nameof (gameTimeSource));
         }
 
-        //====== public properties =========================================================================================================
+        //====== public properties
 
         public long Tick           => gameTimeSource.Tick;
         public int  TicksPerSecond => gameTimeSource.TicksPerSecond;
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         public TimeSpan Elapsed => GameTimeUtils.TicksToDuration (Tick, TicksPerSecond);
 
-        //====== public methods ============================================================================================================
+        //====== public methods
 
         public GameTimeDelay CreateDelay (TimeSpan duration) => new GameTimeDelay (this, duration);
 
-        //====== override: Object ==========================================================================================================
+        //====== override: Object
 
         public override string ToString () => $"Tick: {Tick}, Elapsed: {Elapsed}";
     }

@@ -7,11 +7,11 @@ namespace Snake.Core
     {
         public const int MaxScore = 99999;
 
-        //====== public properties =========================================================================================================
+        //====== public properties
 
         public int Value { get; private set; }
 
-        //====== public methods ============================================================================================================
+        //====== public methods
 
         public void Increase (int value)
         {
@@ -22,7 +22,7 @@ namespace Snake.Core
             Value = Math.Min (MaxScore, newValue);
         }
 
-        //====== override: Object ==========================================================================================================
+        //====== override: Object
 
         public override string ToString () => $"{nameof (Score)}: {Value}";
     }
