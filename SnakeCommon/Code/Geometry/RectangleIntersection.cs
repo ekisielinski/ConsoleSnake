@@ -12,18 +12,14 @@ namespace Snake.Common.Geometry
             Intersection = Intersect (r1, r2);
         }
 
-        //====== public properties =========================================================================================================
+        //====== public properties
 
         public Rectangle RectangleOne { get; }
         public Rectangle RectangleTwo { get; }
 
         public Rectangle Intersection { get; }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         public bool HasNoIntersection => Intersection.Size.HasNoArea;
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public Rectangle RelativelyToRectOne
         {
@@ -38,8 +34,6 @@ namespace Snake.Common.Geometry
             }
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         public Rectangle RelativelyToRectTwo
         {
             get
@@ -53,7 +47,7 @@ namespace Snake.Common.Geometry
             }
         }
 
-        //====== public static methods =====================================================================================================
+        //====== public static methods
 
         public static Rectangle Intersect (Rectangle r1, Rectangle r2)
         {
@@ -76,7 +70,7 @@ namespace Snake.Common.Geometry
             return result;
         }
 
-        //====== override: Object ==========================================================================================================
+        //====== override: Object
 
         public override string ToString () => $"{nameof (RectangleIntersection)}: {Intersection}";
     }

@@ -11,24 +11,19 @@ namespace Snake.Common.Geometry
             Size     = size;
         }
 
-        //====== public static properties ==================================================================================================
+        //====== public static properties
 
         public static Rectangle Empty { get; } = new Rectangle (Point.Zero, Size.Zero);
 
-        //====== public properties =========================================================================================================
+        //====== public properties
 
         public Point Position { get; }
         public Size  Size     { get; }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         public int X1 => Position.X;
         public int Y1 => Position.Y;
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         [DebuggerBrowsable (DebuggerBrowsableState.Never)]
-
         public int X2
         {
             get
@@ -39,10 +34,7 @@ namespace Snake.Common.Geometry
             }
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         [DebuggerBrowsable (DebuggerBrowsableState.Never)]
-
         public int Y2
         {
             get
@@ -53,14 +45,9 @@ namespace Snake.Common.Geometry
             }
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         public Point TopLeft => Position;
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         [DebuggerBrowsable (DebuggerBrowsableState.Never)]
-
         public Point TopRight
         {
             get
@@ -70,10 +57,7 @@ namespace Snake.Common.Geometry
             }
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         [DebuggerBrowsable (DebuggerBrowsableState.Never)]
-
         public Point BottomLeft
         {
             get
@@ -83,11 +67,7 @@ namespace Snake.Common.Geometry
             }
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
-
         [DebuggerBrowsable (DebuggerBrowsableState.Never)]
-
         public Point BottomRight
         {
             get
@@ -96,8 +76,6 @@ namespace Snake.Common.Geometry
                 return new Point (X1 + Size.Width - 1, Y1 + Size.Height - 1);
             }
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public Point Center
         {
@@ -110,8 +88,6 @@ namespace Snake.Common.Geometry
             }
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         public Rectangle CenterAt (Point position)
         {
             var newPosition = new Point (position.X - (Size.Width / 2), position.Y - (Size.Height / 2));
@@ -119,27 +95,21 @@ namespace Snake.Common.Geometry
             return new Rectangle (newPosition, Size);
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         public Rectangle Intersect (Rectangle other) => RectangleIntersection.Intersect (this, other);
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public Rectangle ChangeWidth  (int newWidth)  => new Rectangle (Position, new Size (newWidth, Size.Height));
         public Rectangle ChangeHeight (int newHeight) => new Rectangle (Position, new Size (Size.Width, newHeight));
 
-        //====== public methods ============================================================================================================
+        //====== public methods
 
         public bool Contains (Point point)
         {
             return Size.HasNoArea == false && (point.X >= X1 && point.X <= X2 && point.Y >= Y1 && point.Y <= Y2);
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         public Rectangle Translate (Point point) => new Rectangle (Position.Add (point), Size);
 
-        //====== private methods ===========================================================================================================
+        //====== private methods
 
         private void ThrowIfCannotAccessProperty (string propertyName)
         {
@@ -148,22 +118,20 @@ namespace Snake.Common.Geometry
             throw new InvalidOperationException ($"Cannot access {propertyName} property if the current {nameof (Size)} has no area.");
         }
 
-        //====== IEquatable<Rectangle> =====================================================================================================
+        //====== IEquatable<Rectangle>
 
         public bool Equals (Rectangle other) => Position == other.Position && Size == other.Size;
 
-        //====== operators =================================================================================================================
+        //====== operators
 
         public static bool operator == (Rectangle left, Rectangle right) => left.Equals (right);
         public static bool operator != (Rectangle left, Rectangle right) => left.Equals (right) == false;
 
-        //====== override: Object ==========================================================================================================
+        //====== override: Object
 
         public override string ToString () => $"Rectangle: {Position} {Size}";
 
         public override bool Equals (object obj) => (obj is Rectangle) && Equals ((Rectangle) obj);
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public override int GetHashCode ()
         {

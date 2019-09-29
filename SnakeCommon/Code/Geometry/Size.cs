@@ -11,21 +11,17 @@ namespace Snake.Common.Geometry
             Height = Verify.InRange (height, 0, int.MaxValue, nameof (height));
         }
 
-        //====== public properties =========================================================================================================
+        //====== public properties
 
         public int Width  { get; }
         public int Height { get; }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         public int  Area      => Width * Height;
         public bool HasNoArea => Area == 0;
 
-        //====== public methods ============================================================================================================
+        //====== public methods
 
         public Rectangle AsRectangle => new Rectangle (Point.Zero, this);
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public Size Scale (double factor)
         {
@@ -37,26 +33,24 @@ namespace Snake.Common.Geometry
             return new Size (w, h);
         }
 
-        //====== public static properties ==================================================================================================
+        //====== public static properties
 
         public static Size Zero => new Size ();
 
-        //====== IEquatable<Size> ==========================================================================================================
+        //====== IEquatable<Size>
 
         public bool Equals (Size other) => Width == other.Width && Height == other.Height;
 
-        //====== operators =================================================================================================================
+        //====== operators
 
         public static bool operator == (Size left, Size right) => left.Equals (right);
         public static bool operator != (Size left, Size right) => left.Equals (right) == false;
 
-        //====== override: Object ==========================================================================================================
+        //====== override: Object
 
         public override bool Equals (object obj) => (obj is Size) && Equals ((Size) obj);
 
         public override string ToString () => $"{Width}x{Height}";
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public override int GetHashCode ()
         {

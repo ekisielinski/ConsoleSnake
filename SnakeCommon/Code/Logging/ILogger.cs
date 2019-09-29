@@ -8,8 +8,6 @@ namespace Snake.Common.Logging
         void Log (string message, bool isError);
     }
 
-    //--------------------------------------------------------------------------------------------------------------------------------------
-
     public static class ILoggerExtensions
     {
         public static void Log (this ILogger me, Exception ex)

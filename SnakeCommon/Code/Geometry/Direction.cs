@@ -7,8 +7,6 @@ namespace Snake.Common.Geometry
         Up, Down, Left, Right
     }
 
-    //--------------------------------------------------------------------------------------------------------------------------------------
-
     public static class DirectionExtensions
     {
         public static Point ToPoint (this Direction me)
@@ -20,12 +18,9 @@ namespace Snake.Common.Geometry
                 case Direction.Left  : return new Point (-1,  0);
                 case Direction.Right : return new Point ( 1,  0);
 
-                default:
-                    throw new InvalidOperationException ();
+                default: throw new InvalidOperationException ();
             }
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public static bool IsOpposite (this Direction me, Direction direction)
         {
@@ -36,8 +31,7 @@ namespace Snake.Common.Geometry
                 case Direction.Left  : return direction == Direction.Right;
                 case Direction.Right : return direction == Direction.Left;
 
-                default:
-                    throw new InvalidOperationException ();
+                default: throw new InvalidOperationException ();
             }
         }
     }
