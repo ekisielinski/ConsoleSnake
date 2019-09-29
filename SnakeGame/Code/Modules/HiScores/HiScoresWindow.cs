@@ -10,7 +10,7 @@ namespace Snake.Game.Modules
     {
         readonly IHiScores hiScoresList;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public HiScoresWindow (IHiScores hiScoresList, WindowAppearance appearance = null) : base (appearance)
         {
@@ -19,7 +19,7 @@ namespace Snake.Game.Modules
             Initialize ();
         }
 
-        //====== override: Window ==========================================================================================================
+        //====== override: Window
 
         protected override void PaintContent (TextCanvas canvas)
         {
@@ -33,7 +33,7 @@ namespace Snake.Game.Modules
             }
         }
 
-        //====== private methods ===========================================================================================================
+        //====== private methods
 
         private void Initialize ()
         {
@@ -46,8 +46,6 @@ namespace Snake.Game.Modules
 
             Title = "Hall of Fame";
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         private void PrintHiScoreItem (TextCanvas canvas, Point position, int itemIndex, HiScoresEntry entry)
         {

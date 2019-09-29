@@ -26,7 +26,7 @@ namespace Snake.Game.Core
 
         bool showFpsIndicator = true;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public GameModuleLoop (GameModule gameModule, ScreenTransitionActivator transitionActivator, HardwareAccessLayer hal, ISleeper sleeper)
         {
@@ -36,7 +36,7 @@ namespace Snake.Game.Core
             this.sleeper             = Verify.NotNull (sleeper, nameof (sleeper));
         }
 
-        //====== public methods ============================================================================================================
+        //====== public methods
 
         public object Start ()
         {
@@ -57,8 +57,6 @@ namespace Snake.Game.Core
             return context.Result;
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         private void StartLoop (TextCanvas canvas, ScreenTransition screenTransition)
         {
             var sw = new Stopwatch ();
@@ -78,8 +76,6 @@ namespace Snake.Game.Core
             }
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         private void ApplyPauseBetweenFrames (TimeSpan timeSpentOnProcessing)
         {
             var maxDelay = GameTimeUtils.DelayBetweenTicks (context.GameTime.TicksPerSecond);
@@ -88,16 +84,12 @@ namespace Snake.Game.Core
             if (delay > TimeSpan.Zero) sleeper.Sleep (delay);
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         private ScreenTransition CreateScreenTransition (TextCanvas canvas)
         {
             var canvasSnapshot = canvas.ToTextImage ();
 
             return transitionActivator.Invoke (canvasSnapshot, canvas, context.GameTime);
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         private void ProcessInput ()
         {
@@ -112,14 +104,10 @@ namespace Snake.Game.Core
             hal.InputDevice.Clear (); // TODO: should it be cleared or not?
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         private void ProcessLogic ()
         {
             gameModule.ProcessLogic (context);
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         private void ProcessCanvas (TextCanvas canvas, ScreenTransition screenTransition)
         {
@@ -138,8 +126,6 @@ namespace Snake.Game.Core
             if (screenTransition.IsDead == false) screenTransition.Update ();
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         private void ProcessAudio ()
         {
             var disableableAudioDevice = new DisableableAudioDevice (hal.AudioDevice);
@@ -153,8 +139,6 @@ namespace Snake.Game.Core
                 disableableAudioDevice.IsDisabled = true;
             }
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         private void DrawFpsIndicator (TextCanvas canvas)
         {

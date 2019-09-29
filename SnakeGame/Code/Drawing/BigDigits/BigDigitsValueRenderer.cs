@@ -14,12 +14,12 @@ namespace Snake.Game.Drawing
             ForeColor = foreColor;
         }
 
-        //====== public properties =========================================================================================================
+        //====== public properties
 
         public int     Value     { get; }
         public Color16 ForeColor { get; }
 
-        //====== public methods ============================================================================================================
+        //====== public methods
 
         public ITextArrayReader RenderImage ()
         {

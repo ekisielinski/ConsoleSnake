@@ -8,15 +8,15 @@ namespace Snake.Game
         public NullTransition (ITextArrayReader prevScreenSnapshot, TextCanvas canvas, GameTime gameTime)
             : base (prevScreenSnapshot, canvas, gameTime) { }
 
-        //====== override: ScreenTransition ================================================================================================
+        //====== override: ScreenTransition
 
         public override void Paint () { }
 
-        //====== override: GameObject ======================================================================================================
+        //====== override: GameObject
 
         protected override void UpdateImpl () => IsDead = true;
 
-        //====== public static properties ==================================================================================================
+        //====== public static properties
 
         public static ScreenTransitionActivator Activator { get; } = (x, y, z) => new NullTransition (x, y, z);
     }

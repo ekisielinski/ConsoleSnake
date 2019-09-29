@@ -11,7 +11,7 @@ namespace Snake.Game.Modules
             Reason     = Verify.NotNullOrWhiteSpace (reason, nameof (reason));
         }
 
-        //====== public properties =========================================================================================================
+        //====== public properties
 
         public string PlayerName { get; }
         public int    Score      { get; }

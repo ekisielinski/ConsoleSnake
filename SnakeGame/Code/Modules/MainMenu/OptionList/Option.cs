@@ -10,7 +10,7 @@ namespace Snake.Game.Modules
             Value = value;
         }
 
-        //====== public properties =========================================================================================================
+        //====== public properties
 
         public string Name { get; }
 

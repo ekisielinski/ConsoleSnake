@@ -8,12 +8,10 @@ namespace Snake.Game.Core
     {
         readonly Stopwatch runTime = new Stopwatch ();
 
-        //====== IGameModuleContext ========================================================================================================
+        //====== IGameModuleContext
 
         public GameTime GameTime      => GameTimeSource.GameTime;
         public TimeSpan ModuleRunTime => runTime.Elapsed;
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public void Exit (object result)
         {
@@ -21,14 +19,14 @@ namespace Snake.Game.Core
             Result = result;
         }
 
-        //====== public properties =========================================================================================================
+        //====== public properties
 
         public bool   ExitRequested { get; private set; }
         public object Result        { get; private set; }
 
         public GameTimeSource GameTimeSource { get; } = new GameTimeSource (25);
 
-        //====== public methods ============================================================================================================
+        //====== public methods
        
         public void EnterModule () => runTime.Start ();
         public void ExitModule  () => runTime.Reset ();

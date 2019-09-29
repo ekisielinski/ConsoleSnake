@@ -8,20 +8,20 @@ namespace Snake.Game.Modules
     {
         private readonly int maxLength;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public UserInputString (int maxLength = 12)
         {
             this.maxLength = Verify.InRange (maxLength, 1, int.MaxValue, nameof (maxLength));
         }
 
-        //====== public properties =========================================================================================================
+        //====== public properties
 
         public string Entered { get; private set; } = string.Empty;
 
         public bool IsValid => Entered.Length > 0;
 
-        //====== public methods ============================================================================================================
+        //====== public methods
 
         public bool HandleKey (IInputDevice inputDevice)
         {
@@ -50,7 +50,7 @@ namespace Snake.Game.Modules
             return canAdd;
         }
 
-        //====== private methods ===========================================================================================================
+        //====== private methods
 
         private bool TryRemoveLastCharacter ()
         {

@@ -16,7 +16,7 @@ namespace Snake.Game.Drawing
     {
         static readonly Dictionary<int, ITextArrayReader> digits = new Dictionary<int, ITextArrayReader> ();
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         static BigDigits ()
         {
@@ -30,7 +30,7 @@ namespace Snake.Game.Drawing
             }
         }
 
-        //====== public static methods =====================================================================================================
+        //====== public static methods
 
         public static ITextArrayReader GetDigit (int digit)
         {
@@ -39,7 +39,7 @@ namespace Snake.Game.Drawing
             return digits[digit];
         }
 
-        //====== private static methods ====================================================================================================
+        //====== private static methods
 
         private static ITextArrayReader ExtractDigit (int digit, string data)
         {

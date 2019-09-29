@@ -11,7 +11,7 @@ namespace Snake.Game.Drawing
     {
         Dictionary<Type, ITerrainEntityLookProvider> lookProviders = new Dictionary<Type, ITerrainEntityLookProvider> ();
 
-        //====== public methods ============================================================================================================
+        //====== public methods
 
         public void Register<T> (ITerrainEntityLookProvider lookProvider)
         {
@@ -19,8 +19,6 @@ namespace Snake.Game.Drawing
 
             lookProviders.Add (typeof (T), lookProvider);
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public void Paint (ITerrainEntityReader boardReader, TextCanvas canvas, Point offset)
         {
@@ -44,7 +42,7 @@ namespace Snake.Game.Drawing
             }
         }
 
-        //====== private methods ===========================================================================================================
+        //====== private methods
 
         private TextCell GetLook (TerrainEntity entity)
         {

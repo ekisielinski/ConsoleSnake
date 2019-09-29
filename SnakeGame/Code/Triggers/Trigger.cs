@@ -4,20 +4,20 @@
     {
         protected bool isHandled;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         protected Trigger (bool isHandled = false)
         {
             this.isHandled = isHandled;
         }
 
-        //====== abstract/virtual ==========================================================================================================
+        //====== abstract/virtual
 
         protected abstract bool Condition { get; }
 
         protected virtual void AfterHandle () { }
 
-        //====== public methods ============================================================================================================
+        //====== public methods
 
         public bool TryHandle ()
         {
@@ -33,7 +33,7 @@
             return false;
         }
 
-        //====== override: Object ==========================================================================================================
+        //====== override: Object
 
         public override string ToString () => $"{GetType ().Name}, handled = {isHandled}";
     }

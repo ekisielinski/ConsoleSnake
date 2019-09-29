@@ -13,16 +13,16 @@ namespace Snake.Game
             Score = Verify.InRange (score, 1, int.MaxValue, nameof (score));
         }
 
-        //====== public properties =========================================================================================================
+        //====== public properties
 
         public string Name  { get; }
         public int    Score { get; }
 
-        //====== IEquatable<HiScoresEntry> =================================================================================================
+        //====== IEquatable<HiScoresEntry>
 
         public bool Equals (HiScoresEntry other) => (other != null) ? Score == other.Score && Name == other.Name : false;
 
-        //====== IComparable ===============================================================================================================
+        //====== IComparable
 
         public int CompareTo (object obj)
         {
@@ -35,17 +35,15 @@ namespace Snake.Game
             return CompareTo (other);
         }
 
-        //====== IComparable<HiScoresEntry> ================================================================================================
+        //====== IComparable<HiScoresEntry>
 
         public int CompareTo (HiScoresEntry other) => other.Score.CompareTo (Score);
 
-        //====== override: Object ==========================================================================================================
+        //====== override: Object
 
         public override bool Equals (object obj) => Equals (obj as HiScoresEntry);
 
         public override string ToString () => $"{Name}: {Score}";
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public override int GetHashCode ()
         {

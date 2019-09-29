@@ -6,14 +6,14 @@ namespace Snake.Game
     {
         readonly IHiScoresStorage hiScoresStorage;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public HiScoresManager (IHiScoresStorage hiScoresStorage)
         {
             this.hiScoresStorage = Verify.NotNull (hiScoresStorage, nameof (hiScoresStorage));
         }
 
-        //====== IHiScoresReader ===========================================================================================================
+        //====== IHiScoresReader
 
         public IHiScores GetHiScores ()
         {
@@ -29,7 +29,7 @@ namespace Snake.Game
             return hiScores;
         }
 
-        //====== IHiScoresUpdater ==========================================================================================================
+        //====== IHiScoresUpdater
 
         public int? RegisterNewResult (string playerName, int score)
         {
@@ -47,7 +47,7 @@ namespace Snake.Game
             return placement;
         }
 
-        //====== private static methods ====================================================================================================
+        //====== private static methods
 
         private static IHiScores GetFakeHiScores ()
         {

@@ -8,20 +8,18 @@ namespace Snake.Game
     {
         public delegate (IGraphNode node, ScreenTransitionActivator transitionActivator) NodeCreator (T parameter);
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         readonly GameModuleActivator moduleActivator;
 
         NodeCreator nodeCreator = null;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public GraphNode (GameModuleActivator moduleActivator)
         {
             this.moduleActivator = Verify.NotNull (moduleActivator, nameof (moduleActivator));
         }
 
-        //====== public methods ============================================================================================================
+        //====== public methods
 
         public void SetNext (NodeCreator nodeCreator)
         {
@@ -32,11 +30,9 @@ namespace Snake.Game
             this.nodeCreator = nodeCreator;
         }
 
-        //====== IModuleNode ===============================================================================================================
+        //====== IModuleNode
 
         public GameModule GetInstance () => moduleActivator.Invoke ();
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public (IGraphNode, ScreenTransitionActivator) GetNextNode (object parameter)
         {

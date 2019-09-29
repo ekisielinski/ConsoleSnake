@@ -6,11 +6,9 @@ namespace Snake.Game
     {
         IHiScores hiScoresCopy;
 
-        //====== IHiScoresStorage ==========================================================================================================
+        //====== IHiScoresStorage
 
         public IHiScores Load () => hiScoresCopy;
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public void Save (IHiScores hiScores)
         {

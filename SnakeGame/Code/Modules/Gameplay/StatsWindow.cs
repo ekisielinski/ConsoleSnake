@@ -12,7 +12,7 @@ namespace SnakeGame.Modules.Gameplay
     {
         readonly StatusItem[] items;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public StatsWindow (string playerName, IEnumerable<StatusItem> items, Size size, WindowAppearance appearance = null) : base (appearance)
         {
@@ -22,7 +22,7 @@ namespace SnakeGame.Modules.Gameplay
             Size  = size;
         }
 
-        //====== override: Window ==========================================================================================================
+        //====== override: Window
         
         protected override void PaintContent (TextCanvas canvas)
         {
@@ -34,7 +34,7 @@ namespace SnakeGame.Modules.Gameplay
             }
         }
 
-        //====== private methods ===========================================================================================================
+        //====== private methods
 
         private void WriteStatsLine (TextCanvas canvas, Point position, string key, string value, Color16 foreColor)
         {

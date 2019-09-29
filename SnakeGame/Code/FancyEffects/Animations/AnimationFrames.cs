@@ -9,7 +9,7 @@ namespace Snake.Game
     {
         readonly FramesArrangement arrangement;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public AnimationFrames (IReadOnlyList<T> frames, FramesArrangement arrangement = FramesArrangement.Original)
         {
@@ -35,7 +35,7 @@ namespace Snake.Game
             }
         }
 
-        //====== public properties =========================================================================================================
+        //====== public properties
 
         public IReadOnlyList<T> Frames { get; }
     }

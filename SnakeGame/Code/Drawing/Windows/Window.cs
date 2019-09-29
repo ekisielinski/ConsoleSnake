@@ -11,17 +11,17 @@ namespace Snake.Game.Drawing
             Appearance = appearance ?? WindowAppearance.Default;
         }
 
-        //====== public properties =========================================================================================================
+        //====== public properties
 
         public Size             Size       { get; protected set; } = new Size (20, 10);
         public string           Title      { get; protected set; } = "No Name";
         public WindowAppearance Appearance { get; }
 
-        //====== abstract ==================================================================================================================
+        //====== abstract
 
         protected abstract void PaintContent (TextCanvas canvas);
 
-        //====== public methods ============================================================================================================
+        //====== public methods
 
         public void Paint (TextCanvas canvas, Point position)
         {
@@ -47,7 +47,7 @@ namespace Snake.Game.Drawing
             PaintContent (contentView);
         }
 
-        //====== private methods ===========================================================================================================
+        //====== private methods
 
         private void PaintTitle (TextCanvas windowView)
         {

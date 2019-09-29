@@ -15,7 +15,7 @@ namespace Snake.Game
 
         int frameIndex = 0;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public Animation (AnimationFrames<T> frames, GameTime gameTime, TimeSpan frameDelay, bool repeat = true)
         {
@@ -27,11 +27,11 @@ namespace Snake.Game
             if (frameDelay <= TimeSpan.Zero) throw new ArgumentOutOfRangeException (nameof (frameDelay));
         }
 
-        //====== public properties =========================================================================================================
+        //====== public properties
 
         public T CurrentFrame => frames.Frames[frameIndex];
 
-        //====== public methods ============================================================================================================
+        //====== public methods
 
         public void Start ()
         {
@@ -39,8 +39,6 @@ namespace Snake.Game
 
             gtd = gameTime.CreateDelay (frameDelay);
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public void Update ()
         {

@@ -4,26 +4,24 @@
     {
         bool isReadyToFire;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         private ManualSetTrigger (bool isReadyToFire)
         {
             this.isReadyToFire = isReadyToFire;
         }
 
-        //====== public methods ============================================================================================================
+        //====== public methods
 
         public void Set () => isReadyToFire = true;
 
-        //====== override: Trigger =========================================================================================================
+        //====== override: Trigger
 
         protected override bool Condition => isReadyToFire;
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         protected override void AfterHandle () => isReadyToFire = false;
 
-        //====== public static properties ==================================================================================================
+        //====== public static properties
 
         public static ManualSetTrigger NotReady => new ManualSetTrigger (false);
         public static ManualSetTrigger Ready    => new ManualSetTrigger (true);

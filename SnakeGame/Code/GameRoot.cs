@@ -11,7 +11,7 @@ namespace Snake.Game
         readonly ISleeper sleeper;
         readonly ILogger logger;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public GameRoot (HardwareAccessLayer hal, ISleeper sleeper, ILogger logger)
         {
@@ -20,7 +20,7 @@ namespace Snake.Game
             this.logger  = Verify.NotNull (logger,  nameof (logger));
         }
 
-        //====== public methods ============================================================================================================
+        //====== public methods
 
         public void StartGame (IGraphNode mainNode)
         {

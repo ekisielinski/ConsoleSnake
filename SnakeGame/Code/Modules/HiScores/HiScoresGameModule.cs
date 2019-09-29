@@ -14,14 +14,14 @@ namespace Snake.Game.Modules
 
         Animation<Color16> hiScoresAnimation;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public HiScoreGameModule (IHiScores hiScores)
         {
             this.hiScores = Verify.NotNull (hiScores, nameof (hiScores));
         }
 
-        //====== override: GameModule ======================================================================================================
+        //====== override: GameModule
 
         public override void Initialize (GameTime gameTime)
         {
@@ -32,16 +32,12 @@ namespace Snake.Game.Modules
             hiScoresAnimation.Start ();
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         public override void ProcessLogic (IGameModuleContext context)
         {
             hiScoresAnimation.Update ();
 
             HandleExitFlag (context);
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public override void ProcessCanvas (TextCanvas canvas)
         {

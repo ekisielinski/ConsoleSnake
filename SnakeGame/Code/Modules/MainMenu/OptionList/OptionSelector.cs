@@ -7,14 +7,14 @@ namespace Snake.Game.Modules
     {
         public event Action<Option<T>, int> IndexChanged;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public OptionSelector (OptionsList<T> optionsList)
         {
             OptionsList = Verify.NotNull (optionsList, nameof (optionsList));
         }
 
-        //====== public properties =========================================================================================================
+        //====== public properties
 
         public OptionsList<T> OptionsList { get; private set; }
 
@@ -22,7 +22,7 @@ namespace Snake.Game.Modules
 
         public T CurrentValue => OptionsList.Options[CurrentOptionIndex].Value;
 
-        //====== public methods ============================================================================================================
+        //====== public methods
 
         public void SelectNext ()
         {
@@ -34,8 +34,6 @@ namespace Snake.Game.Modules
                 IndexChanged?.Invoke (OptionsList.Options[newIndex], newIndex);
             }
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public void SelectPrevious ()
         {

@@ -24,14 +24,14 @@ namespace Snake.Game.Modules
 
         ManualSetTrigger  trgAppleConsumeSound = ManualSetTrigger.NotReady;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public GameplayGameModule (string playerName)
         { 
             this.playerName = Verify.NotNull (playerName, nameof (playerName));
         }
 
-        //====== override: GameModule ======================================================================================================
+        //====== override: GameModule
 
         public override void Initialize (GameTime gameTime)
         {
@@ -46,8 +46,6 @@ namespace Snake.Game.Modules
             bigDigitsScoreUI  = new BigDigitsScoreUI (scoreTransitionUI);
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         public override void ProcessKey (IInputDevice inputDevice)
         {
             if (keyHandler == null)
@@ -57,8 +55,6 @@ namespace Snake.Game.Modules
 
             keyHandler.ReceiveKeys ();
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public override void ProcessLogic (IGameModuleContext context)
         {
@@ -73,8 +69,6 @@ namespace Snake.Game.Modules
             gameLogic.Update ();
             scoreTransitionUI.Update ();
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public override void ProcessCanvas (TextCanvas canvas)
         {
@@ -93,8 +87,6 @@ namespace Snake.Game.Modules
             bigDigitsScoreUI.DrawCenter (scoreView, 2);
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         public override void ProcessAudio (IAudioDevice audioPlayer)
         {
             if (trgAppleConsumeSound.TryHandle ())
@@ -104,7 +96,7 @@ namespace Snake.Game.Modules
             }
         }
 
-        //====== private methods ===========================================================================================================
+        //====== private methods
 
         private void PaintStatsWindow (TextCanvas canvas)
         {
@@ -117,7 +109,6 @@ namespace Snake.Game.Modules
             var statsWindow = new StatsWindow (playerName, gameLogic.GetStatus (), statsView.Size,app );
 
             statsWindow.Paint (statsView, Point.Zero);
-
         }
     }
 }

@@ -10,8 +10,6 @@ namespace Snake.Game
         int Capacity { get; }
     }
 
-    //--------------------------------------------------------------------------------------------------------------------------------------
-
     public static class IHiScoresExtensions
     {
         public static bool IsEmpty (this IHiScores me)

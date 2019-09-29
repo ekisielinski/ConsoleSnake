@@ -13,7 +13,7 @@ namespace Snake.Game
         int lastScore;
         ITextArrayReader lastImage;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public BigDigitsScoreUI (IScoreStatus scoreStatus, Color16 foreColor = Color16.Teal)
         {
@@ -24,11 +24,11 @@ namespace Snake.Game
             lastScore = scoreStatus.Value;
         }
 
-        //====== public properties =========================================================================================================
+        //====== public properties
 
         public Color16 ForeColor { get; }
 
-        //====== public methods ============================================================================================================
+        //====== public methods
 
         public void DrawCenter (TextCanvas canvas, int y)
         {

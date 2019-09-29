@@ -64,7 +64,7 @@ namespace SnakeConsoleUI.Hardware
             sb.Clear ();
         }
 
-        //====== private static methods ====================================================================================================
+        //====== private static methods
 
         private static ConsoleColor ToConsoleColor (Color16 color16) => (ConsoleColor) color16;
     }

@@ -14,7 +14,7 @@ namespace Snake.Game.Modules
 
         ITextArrayReader placementImage;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public GameOverGameModule (GameOverInfo gameOverInfo, int? placement)
         {
@@ -22,7 +22,7 @@ namespace Snake.Game.Modules
             this.placement    = placement;
         }
     
-        //====== override: GameModule ======================================================================================================
+        //====== override: GameModule
 
         public override void Initialize (GameTime gameTime)
         {
@@ -31,8 +31,6 @@ namespace Snake.Game.Modules
                 placementImage = new BigDigitsValueRenderer (placement.Value + 1, Color16.Lime).RenderImage ();
             }
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public override void ProcessCanvas (TextCanvas canvas)
         {

@@ -10,7 +10,7 @@ namespace Snake.Game
         protected readonly TextCanvas canvas;
         protected readonly TextImage  prevGameModuleScreenSnapshot;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         protected ScreenTransition (ITextArrayReader prevGameModuleScreenSnapshot, TextCanvas canvas, GameTime gameTime) : base (gameTime)
         {
@@ -26,7 +26,7 @@ namespace Snake.Game
             this.prevGameModuleScreenSnapshot = TextImage.CreateCopyFrom (prevGameModuleScreenSnapshot);
         }
 
-        //====== abstract methods ==========================================================================================================
+        //====== abstract methods
 
         public abstract void Paint ();
     }

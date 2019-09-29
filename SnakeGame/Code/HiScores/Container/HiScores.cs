@@ -8,7 +8,7 @@ namespace Snake.Game
     {
         List<HiScoresEntry> list = new List<HiScoresEntry> ();
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public HiScores (IHiScores hiScores)
         {
@@ -19,20 +19,18 @@ namespace Snake.Game
             list.AddRange (hiScores.GetList ());
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         public HiScores (int capacity = 8)
         {
             Capacity = Verify.InRange (capacity, 2, 100, nameof (capacity));
         }
 
-        //====== IHiScores =================================================================================================================
+        //====== IHiScores
 
         public int Capacity { get; }
         
         public IReadOnlyList<HiScoresEntry> GetList () => list.OrderBy (x => x).ToArray ();
 
-        //====== public methods ============================================================================================================
+        //====== public methods
 
         public int? TryAdd (HiScoresEntry item)
         {

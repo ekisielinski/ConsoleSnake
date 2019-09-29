@@ -14,7 +14,7 @@ namespace Snake.Game.Modules
         bool isOptionAccepted = false;
         bool isOptionChanged  = false;
  
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public MainMenuGameModule ()
         {
@@ -25,7 +25,7 @@ namespace Snake.Game.Modules
             optionSelector.IndexChanged += (option, index) => isOptionChanged = true;
         }
 
-        //====== override: GameModule ======================================================================================================
+        //====== override: GameModule
 
         public override void ProcessKey (IInputDevice inputDevice)
         {
@@ -35,8 +35,6 @@ namespace Snake.Game.Modules
             if (key.KeyType == KeyType.Down)  optionSelector.SelectNext ();
             if (key.KeyType == KeyType.Enter) isOptionAccepted = true;
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public override void ProcessLogic (IGameModuleContext context)
         {
@@ -48,8 +46,6 @@ namespace Snake.Game.Modules
             }
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-        
         public override void ProcessCanvas (TextCanvas canvas)
         {
             canvas.ClearColor (Color16.Black);
@@ -70,8 +66,6 @@ namespace Snake.Game.Modules
             canvas.WriteText (position, version, Color16.Gray, Color16.Black);
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         public override void ProcessAudio (IAudioDevice audioPlayer)
         {
             if (isOptionChanged)
@@ -90,7 +84,7 @@ namespace Snake.Game.Modules
             }
         }
 
-        //====== private static methods ====================================================================================================
+        //====== private static methods
 
         private static OptionsList<MainMenuEntry> CreateOptionsList ()
         {

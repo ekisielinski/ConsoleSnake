@@ -9,7 +9,7 @@ namespace Snake.Game
     {
         const double TransitionDurationInSecs = 0.75;
 
-        //----------------------------------------------------------------------------------------------------------------------------------
+        //---
 
         readonly IScoreStatus scoreStatus;
 
@@ -18,7 +18,7 @@ namespace Snake.Game
 
         GameTimeDelay delay;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public ScoreTransitionUI (IScoreStatus scoreStatus, GameTime gameTime) : base (gameTime)
         {
@@ -27,11 +27,11 @@ namespace Snake.Game
             fromScore = toScore = displayedScore = scoreStatus.Value;
         }
 
-        //====== public properties =========================================================================================================
+        //====== public properties
 
         public int Value => displayedScore;
 
-        //====== override: GameObject ======================================================================================================
+        //====== override: GameObject
 
         protected override void UpdateImpl ()
         {
@@ -55,7 +55,7 @@ namespace Snake.Game
             displayedScore = fromScore + MiscUtils.Clamp ((int) scoreToAdd, 0, maxScoreToAdd);
         }
 
-        //====== IStatus ===================================================================================================================
+        //====== IStatus
 
         public IReadOnlyList<StatusItem> GetStatus ()
         {

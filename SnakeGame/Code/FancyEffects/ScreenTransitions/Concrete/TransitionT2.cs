@@ -8,14 +8,14 @@ namespace Snake.Game
     {
         int offset;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public TransitionT2 (ITextArrayReader prevScreenSnapshot, TextCanvas canvas, GameTime gameTime) : base (prevScreenSnapshot, canvas, gameTime)
         {
             offset = canvas.Size.Width;
         }
 
-        //====== override: GameObject ======================================================================================================
+        //====== override: GameObject
 
         protected override void UpdateImpl ()
         {
@@ -28,7 +28,7 @@ namespace Snake.Game
             }
         }
 
-        //====== override: ScreenTransition ================================================================================================
+        //====== override: ScreenTransition
 
         public override void Paint ()
         {
@@ -37,7 +37,7 @@ namespace Snake.Game
             DrawLines ();
         }
 
-        //====== private methods ===========================================================================================================
+        //====== private methods
 
         private void DrawLines ()
         {
@@ -60,7 +60,7 @@ namespace Snake.Game
             }
         }
 
-        //====== public static properties ==================================================================================================
+        //====== public static properties
 
         public static ScreenTransitionActivator Activator { get; } = (x, y, z) => new TransitionT2 (x, y, z);
     }

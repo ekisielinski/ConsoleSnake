@@ -11,11 +11,11 @@ namespace Snake.Game.Core
     {
         bool exit = false;
 
-        //====== public virtual methods -- lifecycle =======================================================================================
+        //====== public virtual methods -- lifecycle
 
         public virtual void Initialize (GameTime gameTime) { } // TODO: can be called second time when re-entering module, need fix
 
-        //====== public virtual methods -- flow ============================================================================================
+        //====== public virtual methods -- flow
 
         // 1)
 
@@ -24,16 +24,12 @@ namespace Snake.Game.Core
             SetExitFlagIfCancelKeyPressed (inputDevice);
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         // 2)
 
         public virtual void ProcessLogic (IGameModuleContext context)
         {
             HandleExitFlag (context);
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         // 3)
 
@@ -44,13 +40,11 @@ namespace Snake.Game.Core
             canvas.WriteText (Point.Zero, msg, Color16.White, Color16.Red);
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-        
         // 4)
 
         public virtual void ProcessAudio (IAudioDevice audioPlayer) { }
 
-        //====== protected methods =========================================================================================================
+        //====== protected methods
 
         protected bool SetExitFlagIfCancelKeyPressed (IInputDevice inputDevice)
         {
@@ -64,8 +58,6 @@ namespace Snake.Game.Core
 
             return exit;
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         protected bool HandleExitFlag (IGameModuleContext context)
         {

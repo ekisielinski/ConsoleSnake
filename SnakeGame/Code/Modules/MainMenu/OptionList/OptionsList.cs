@@ -12,7 +12,7 @@ namespace Snake.Game.Modules
             Options = Verify.NotNull (options, nameof (options));
         }
 
-        //====== public properties =========================================================================================================
+        //====== public properties
 
         public string Title { get; }
 

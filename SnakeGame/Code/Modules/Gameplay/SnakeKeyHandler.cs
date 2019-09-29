@@ -11,7 +11,7 @@ namespace SnakeGame.Modules
         readonly IInputDevice inputDevice;
         readonly ISnakeMoveQueue directionChanger;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public SnakeKeyHandler (IInputDevice inputDevice, ISnakeMoveQueue directionChanger)
         {
@@ -19,7 +19,7 @@ namespace SnakeGame.Modules
             this.directionChanger = Verify.NotNull (directionChanger, nameof (directionChanger));
         }
 
-        //====== public methods ============================================================================================================
+        //====== public methods
 
         public void ReceiveKeys ()
         {
@@ -35,7 +35,7 @@ namespace SnakeGame.Modules
             }
         }
 
-        //====== private methods ===========================================================================================================
+        //====== private methods
 
         private Direction KeyTypeToDirection (KeyType keyType)
         {
@@ -46,8 +46,7 @@ namespace SnakeGame.Modules
                 case KeyType.Left  : return Direction.Left;
                 case KeyType.Right : return Direction.Right;
 
-                default:
-                    throw new ArgumentException ("Invalid key type.");
+                default: throw new ArgumentException ("Invalid key type.");
             }
         }
     }

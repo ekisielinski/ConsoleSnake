@@ -14,7 +14,7 @@ namespace Snake.Game.Modules
         ManualSetTrigger trgStartGameplay = ManualSetTrigger.NotReady;
         ManualSetTrigger trgErrorBeep     = ManualSetTrigger.NotReady;
 
-        //====== override: GameModule ======================================================================================================
+        //====== override: GameModule
 
         public override void ProcessKey (IInputDevice inputDevice)
         {
@@ -31,8 +31,6 @@ namespace Snake.Game.Modules
             }
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         public override void ProcessLogic (IGameModuleContext context)
         {
             if (HandleExitFlag (context)) return;
@@ -44,8 +42,6 @@ namespace Snake.Game.Modules
                 context.Exit (userInputString.Entered);
             }
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public override void ProcessCanvas (TextCanvas canvas)
         {
@@ -59,8 +55,6 @@ namespace Snake.Game.Modules
 
             canvas.WriteTextCenter (25, textField.PadRight (14, ' '), Color16.Lime, Color16.Green);
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public override void ProcessAudio (IAudioDevice audioPlayer)
         {

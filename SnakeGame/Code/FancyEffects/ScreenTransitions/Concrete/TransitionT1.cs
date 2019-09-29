@@ -9,14 +9,14 @@ namespace Snake.Game
     {
         int borderWidth;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public TransitionT1 (ITextArrayReader prevScreenSnapshot, TextCanvas canvas, GameTime gameTime) : base (prevScreenSnapshot, canvas, gameTime)
         {
             borderWidth = GetMaxBorderWidth ();
         }
 
-        //====== override: GameObject ======================================================================================================
+        //====== override: GameObject
 
         protected override void UpdateImpl ()
         {
@@ -29,7 +29,7 @@ namespace Snake.Game
             }
         }
 
-        //====== override: ScreenTransition ================================================================================================
+        //====== override: ScreenTransition
 
         public override void Paint ()
         {
@@ -38,14 +38,12 @@ namespace Snake.Game
             DrawBorder ();
         }
 
-        //====== private methods ===========================================================================================================
+        //====== private methods
 
         private int GetMaxBorderWidth ()
         {
             return (int) Math.Ceiling (Math.Min (canvas.Size.Width / 2d, canvas.Size.Height / 2d));
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         private void DrawBorder ()
         {
@@ -62,11 +60,11 @@ namespace Snake.Game
             }
         }
 
-        //====== public static properties ==================================================================================================
+        //====== public static properties
 
         public static ScreenTransitionActivator Activator { get; } = (x, y, z) => new TransitionT1 (x, y, z);
 
-        //====== private static methods ====================================================================================================
+        //====== private static methods
 
         private static void DrawRectangle (TextCanvas canvas, Rectangle rect, bool isFrame)
         {

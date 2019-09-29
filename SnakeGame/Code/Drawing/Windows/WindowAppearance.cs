@@ -6,8 +6,6 @@ namespace Snake.Game.Drawing
     {
         private WindowAppearance () { }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         public WindowAppearance (Color16 backColor, Color16 borderColor, Color16 titleTextColor, bool thinBorder = false)
         {
             BackColor      = backColor;
@@ -17,7 +15,7 @@ namespace Snake.Game.Drawing
             ThinBorder     = thinBorder;
         }
 
-        //====== public properties =========================================================================================================
+        //====== public properties
 
         public Color16 BackColor      { get; } = Color16.DarkBlue;
         public Color16 BorderColor    { get; } = Color16.White;
@@ -25,7 +23,7 @@ namespace Snake.Game.Drawing
 
         public bool    ThinBorder     { get; } = false;
 
-        //====== public static properties ==================================================================================================
+        //====== public static properties
 
         public static WindowAppearance Default { get; } = new WindowAppearance ();
     }

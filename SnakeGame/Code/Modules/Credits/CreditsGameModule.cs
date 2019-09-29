@@ -10,7 +10,7 @@ namespace Snake.Game.Modules
     {
         Animation<Color16> colorAnimation;
 
-        //====== override: GameModule ======================================================================================================
+        //====== override: GameModule
 
         public override void Initialize (GameTime gameTime)
         {
@@ -21,16 +21,12 @@ namespace Snake.Game.Modules
             colorAnimation.Start ();
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         public override void ProcessLogic (IGameModuleContext context)
         {
             base.ProcessLogic (context);
 
             colorAnimation.Update ();
         }
-
-        //----------------------------------------------------------------------------------------------------------------------------------
 
         public override void ProcessCanvas (TextCanvas canvas)
         {

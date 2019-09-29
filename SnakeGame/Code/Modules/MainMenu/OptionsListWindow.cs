@@ -10,7 +10,7 @@ namespace Snake.Game.Modules
     {
         readonly OptionSelector<T> optionSelector;
 
-        //====== ctors =====================================================================================================================
+        //====== ctors
 
         public OptionsListWindow (OptionSelector<T> optionSelector, WindowAppearance appearance = null) : base (appearance)
         {
@@ -19,7 +19,7 @@ namespace Snake.Game.Modules
             Initialize ();
         }
 
-        //====== override: Window ==========================================================================================================
+        //====== override: Window
 
         protected override void PaintContent (TextCanvas canvas)
         {
@@ -40,7 +40,7 @@ namespace Snake.Game.Modules
             }
         }
 
-        //====== private methods ===========================================================================================================
+        //====== private methods
 
         private void Initialize ()
         {

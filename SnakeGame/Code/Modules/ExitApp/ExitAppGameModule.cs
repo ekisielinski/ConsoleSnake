@@ -14,8 +14,6 @@ namespace Snake.Game.Modules
             }
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-
         public override void ProcessCanvas (TextCanvas canvas)
         {
             canvas.ClearColor (Color16.Black);

@@ -8,7 +8,7 @@ namespace Snake.Game.Core
     {
         readonly Stopwatch sw = new Stopwatch ();
 
-        //====== public methods ============================================================================================================
+        //====== public methods
 
         public void Sleep (TimeSpan duration)
         {
