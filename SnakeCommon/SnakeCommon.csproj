@@ -39,6 +39,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Code\Geometry\Direction.cs" />
+    <Compile Include="Code\Geometry\DirectionExtensions.cs" />
     <Compile Include="Code\Geometry\Point.cs" />
     <Compile Include="Code\Geometry\Rectangle.cs" />
     <Compile Include="Code\Geometry\RectangleIntersection.cs" />
