@@ -29,7 +29,7 @@ namespace Snake.Core
             DelayBeforeDie = gameTime.CreateDelay (TimeSpan.FromSeconds (LifetimeInSeconds));
         }
 
-        //====== override: TerrainEntity ===================================================================================================
+        //====== override: TerrainEntity
 
         public override bool IsDead => Type == AppleType.Transient && DelayBeforeDie.IsDone;
 
