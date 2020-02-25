@@ -17,7 +17,7 @@ namespace Snake.Text
 
         //====== public properties
 
-        public char    Character { get; }
+        public char Character { get; }
 
         public Color16 ForeColor { get; }
         public Color16 BackColor { get; }

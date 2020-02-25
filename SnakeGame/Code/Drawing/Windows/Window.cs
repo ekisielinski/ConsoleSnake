@@ -13,8 +13,9 @@ namespace Snake.Game.Drawing
 
         //====== public properties
 
-        public Size             Size       { get; protected set; } = new Size (20, 10);
-        public string           Title      { get; protected set; } = "No Name";
+        public Size   Size  { get; protected set; } = new Size (20, 10);
+        public string Title { get; protected set; } = "No Name";
+
         public WindowAppearance Appearance { get; }
 
         //====== abstract

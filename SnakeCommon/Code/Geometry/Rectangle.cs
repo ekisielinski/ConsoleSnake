@@ -29,7 +29,6 @@ namespace Snake.Common.Geometry
             get
             {
                 ThrowIfCannotAccessProperty (nameof (X2));
-
                 return X1 + (Size.Width - 1);
             }
         }
@@ -40,7 +39,6 @@ namespace Snake.Common.Geometry
             get
             {
                 ThrowIfCannotAccessProperty (nameof (Y2));
-
                 return Y1 + (Size.Height - 1);
             }
         }

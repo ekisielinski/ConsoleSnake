@@ -15,7 +15,7 @@ namespace Snake.Shared
 
         public HiScoresFileStorage (string fileName, IHiScoresSerializer serializer, ILogger logger)
         {
-            FileName        = Verify.NotNull (fileName, nameof (fileName));
+            FileName = Verify.NotNull (fileName, nameof (fileName));
 
             this.serializer = Verify.NotNull (serializer, nameof (serializer));
             this.logger     = Verify.NotNull (logger, nameof (logger));

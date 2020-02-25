@@ -3,11 +3,11 @@ using Snake.Common.Helpers;
 
 namespace Snake.Text
 {
-    internal class TextArraySlice : TextArray
+    internal sealed class TextArraySlice : TextArray
     {
         readonly TextArray source;
-
-        Rectangle intersection;
+        
+        readonly Rectangle intersection;
 
         //====== ctors
 

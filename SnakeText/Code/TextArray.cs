@@ -6,10 +6,7 @@ namespace Snake.Text
 {
     public abstract class TextArray : ITextArrayReader
     {
-        protected TextArray (Size size)
-        {
-            Size = size;
-        }
+        protected TextArray (Size size) => Size = size;
 
         //====== abstract methods
 

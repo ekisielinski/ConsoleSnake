@@ -26,10 +26,7 @@ namespace SnakeConsoleUI.Hardware
 
             bool colorChanged = (currentForeColor != ToConsoleColor (cell.ForeColor)) || (currentBackColor != ToConsoleColor (cell.BackColor));
 
-            if (colorChanged)
-            {
-                FlushBuffer ();
-            }
+            if (colorChanged) FlushBuffer ();
 
             currentForeColor = ToConsoleColor (cell.ForeColor);
             currentBackColor = ToConsoleColor (cell.BackColor);

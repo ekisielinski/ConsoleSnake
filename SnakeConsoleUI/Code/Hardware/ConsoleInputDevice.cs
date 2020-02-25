@@ -15,10 +15,7 @@ namespace SnakeConsoleUI.Hardware
         {
             if (buffer.Count == 0) EnqueueBuffer ();
 
-            if (buffer.Count > 0)
-            {
-                return buffer.Peek ();
-            }
+            if (buffer.Count > 0) return buffer.Peek ();
 
             return KeyData.Null;
         }
@@ -27,10 +24,7 @@ namespace SnakeConsoleUI.Hardware
         {
             EnqueueBuffer ();
 
-            if (buffer.Count > 0)
-            {
-                return buffer.Dequeue ();
-            }
+            if (buffer.Count > 0) return buffer.Dequeue ();
 
             return KeyData.Null;
         }
@@ -45,10 +39,7 @@ namespace SnakeConsoleUI.Hardware
 
                 var keyData = ConsoleKeyInfoToKeyData (consoleKeyInfo);
 
-                if (keyData != null)
-                {
-                    buffer.Enqueue (keyData);
-                }
+                if (keyData != null) buffer.Enqueue (keyData);
             }
         }
 
