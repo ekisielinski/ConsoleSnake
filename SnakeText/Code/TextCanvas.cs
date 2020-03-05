@@ -176,7 +176,6 @@ namespace Snake.Text
             var canvasSlice = intersection.RelativelyToRectOne;
             var imageSlice  = intersection.RelativelyToRectTwo;
 
-
             int width  = intersection.Intersection.Size.Width;
             int height = intersection.Intersection.Size.Height;
 

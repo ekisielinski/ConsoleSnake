@@ -42,7 +42,7 @@ namespace Snake.Text
             {
                 for (int x = 0; x < Size.Width; x++)
                 {
-                    char ch = (this[x, y])?.Character ?? ' ';
+                    char ch = this[x, y]?.Character ?? ' ';
 
                     sb.Append (ch);
                 }

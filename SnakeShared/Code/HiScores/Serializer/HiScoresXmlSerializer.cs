@@ -91,14 +91,10 @@ namespace Snake.Shared
             //====== public methods
 
             public HiScoresEntry ToHiScoresEntry ()
-            {
-                return new HiScoresEntry (Name, Score);
-            }
+                => new HiScoresEntry (Name, Score);
 
             public static __HiScoresEntry FromHiScoresEntry (HiScoresEntry entry)
-            {
-                return new __HiScoresEntry { Name = entry.Name, Score = entry.Score };
-            }
+                => new __HiScoresEntry { Name = entry.Name, Score = entry.Score };
         }
     }
 }

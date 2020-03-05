@@ -80,7 +80,6 @@ namespace Snake.Game.Modules
 
             var scoreView = canvas.Slice (new Rectangle (new Point (1, 21), new Size (28, 76)));
 
-
             scoreView.WriteTextCenter (0, new string ('─', scoreView.Size.Width), Color16.Teal, Color16.Black);
             scoreView.WriteTextCenter (0, " SCORE ", Color16.Yellow, Color16.Black);
 

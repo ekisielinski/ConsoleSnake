@@ -53,7 +53,7 @@ namespace SnakeConsoleUI.Hardware
                 {
                     for (int x = 0; x < ScreenBuffer.Size.Width; x++)
                     {
-                        var cell = ScreenBuffer[x, y];
+                        TextCell? cell = ScreenBuffer[x, y];
 
                         consoleWriter.WriteCell (cell ?? TextCell.DefaultEmpty);
                     }

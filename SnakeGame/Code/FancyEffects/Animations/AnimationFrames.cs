@@ -17,9 +17,9 @@ namespace Snake.Game
 
             if (frames.Count < 1) throw new ArgumentException ("At least 1 frame is required.");
 
-            this.arrangement = arrangement; // just to remember
+            this.arrangement = arrangement;
 
-            switch (arrangement)
+            switch (this.arrangement)
             {
                 case FramesArrangement.Original:
                     Frames = frames.ToArray ();

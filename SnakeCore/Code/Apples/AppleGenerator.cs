@@ -89,7 +89,6 @@ namespace Snake.Core
                 int x = random.Next (terrain.Size.Width);
                 int y = random.Next (terrain.Size.Height);
 
-
                 if (terrain.GetEntityOrNull (new Point (x, y)) == null)
                 {
                     return new Point (x, y);

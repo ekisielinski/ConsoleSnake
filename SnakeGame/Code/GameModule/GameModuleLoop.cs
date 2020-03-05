@@ -30,10 +30,10 @@ namespace Snake.Game.Core
 
         public GameModuleLoop (GameModule gameModule, ScreenTransitionActivator transitionActivator, HardwareAccessLayer hal, ISleeper sleeper)
         {
-            this.gameModule          = Verify.NotNull (gameModule, nameof (gameModule));
+            this.gameModule          = Verify.NotNull (gameModule,          nameof (gameModule));
             this.transitionActivator = Verify.NotNull (transitionActivator, nameof (transitionActivator));
-            this.hal                 = Verify.NotNull (hal, nameof (hal));
-            this.sleeper             = Verify.NotNull (sleeper, nameof (sleeper));
+            this.hal                 = Verify.NotNull (hal,                 nameof (hal));
+            this.sleeper             = Verify.NotNull (sleeper,             nameof (sleeper));
         }
 
         //====== public methods
@@ -65,10 +65,10 @@ namespace Snake.Game.Core
             {
                 sw.Restart ();
 
-                ProcessInput  ();
-                ProcessLogic  ();
+                ProcessInput ();
+                ProcessLogic ();
                 ProcessCanvas (canvas, screenTransition);
-                ProcessAudio  ();
+                ProcessAudio ();
 
                 ApplyPauseBetweenFrames (sw.Elapsed);
 

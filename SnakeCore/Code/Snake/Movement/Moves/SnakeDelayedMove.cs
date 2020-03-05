@@ -13,7 +13,6 @@ namespace Snake.Core
 
         //====== ctors
 
-
         public SnakeDelayedMove (ISnakeMovementController snakeMover, SnakeSpeed snakeSpeed, GameTime gameTime)
         {
             this.snakeMover = Verify.NotNull (snakeMover, nameof (snakeMover));
