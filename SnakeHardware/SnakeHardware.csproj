@@ -38,7 +38,6 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Code\Audio\DisableableAudioDevice.cs" />
     <Compile Include="Code\Audio\IAudioDevice.cs" />
     <Compile Include="Code\Audio\NullAudioDevice.cs" />
     <Compile Include="Code\Audio\SafeAudioDevice.cs" />

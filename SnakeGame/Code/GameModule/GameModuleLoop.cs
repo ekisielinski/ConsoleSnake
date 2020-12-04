@@ -2,7 +2,6 @@
 using Snake.Common.Helpers;
 using Snake.Core;
 using Snake.Hardware;
-using Snake.Hardware.Audio;
 using Snake.Hardware.Input;
 using Snake.Text;
 using System;
@@ -128,16 +127,7 @@ namespace Snake.Game.Core
 
         private void ProcessAudio ()
         {
-            var disableableAudioDevice = new DisableableAudioDevice (hal.AudioDevice);
-
-            try
-            {
-                gameModule.ProcessAudio (disableableAudioDevice);
-            }
-            finally
-            {
-                disableableAudioDevice.IsDisabled = true;
-            }
+            gameModule.ProcessAudio (hal.AudioDevice);
         }
 
         private void DrawFpsIndicator (TextCanvas canvas)
